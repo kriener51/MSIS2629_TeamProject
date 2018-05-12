@@ -1,0 +1,52 @@
+State,Abbreviation,Automatic Voter Registration,Opt-out type,Year
+Alabama,AL,0,NA,NA
+Alaska,AK,1,Notification sent,2017
+Arizona,AZ,0,NA,NA
+Arkansas,AR,0,NA,NA
+California,CA,1,During agency transaction,2015
+Colorado,CO,1,During agency transaction,2017
+Connecticut,CT,1,During agency transaction,2016
+Delaware,DE,0,NA,NA
+District of Columbia,DC,1,During agency transaction,2016
+Florida,FL,0,NA,NA
+Georgia,GA,0,NA,NA
+Hawaii,HI,0,NA,NA
+Idaho,ID,0,NA,NA
+Illinois,IL,1,During agency transaction,2017
+Indiana,IN,0,NA,NA
+Iowa,IA,0,NA,NA
+Kansas,KS,0,NA,NA
+Kentucky,KY,0,NA,NA
+Louisiana,LA,0,NA,NA
+Maine,ME,0,NA,NA
+Maryland,MD,1,During agency transaction,2018
+Massachusetts,MA,0,NA,NA
+Michigan,MI,0,NA,NA
+Minnesota,MN,0,NA,NA
+Mississippi,MS,0,NA,NA
+Missouri,MO,0,NA,NA
+Montana,MT,0,NA,NA
+Nebraska,NE,0,NA,NA
+Nevada,NV,0,NA,NA
+New Hampshire,NH,0,NA,NA
+New Jersey,NJ,1,During agency transaction,2018
+New Mexico,NM,0,NA,NA
+New York,NY,0,NA,NA
+North Carolina,NC,0,NA,NA
+North Dakota,ND,0,NA,NA
+Ohio,OH,0,NA,NA
+Oklahoma,OK,0,NA,NA
+Oregon,OR,1,Notification sent,2016
+Pennsylvania,PA,0,NA,NA
+Rhode Island,RI,1,During agency transaction,2017
+South Carolina,SC,0,NA,NA
+South Dakota,SD,0,NA,NA
+Tennessee,TN,0,NA,NA
+Texas,TX,0,NA,NA
+Utah,UT,0,NA,NA
+Vermont,VT,1,During agency transaction,2017
+Virginia,VA,0,NA,NA
+Washington,WA,1,During agency transaction,2018
+West Virginia,WV,1,During agency transaction,2016
+Wisconsin,WI,0,NA,NA
+Wyoming,WY,0,NA,NA
