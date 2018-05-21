@@ -1,0 +1,65 @@
+---
+title: "R Notebook"
+output: html_notebook
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r Libraries}
+
+setwd("C:/Users/mccarcls/Documents/Courses/MSIS_2629/DV Group Proj")
+
+library(tidyverse)
+library(xml2)
+
+```
+
+
+This datafeed file comes from a github site. Its a JSON file and it would probably be better to read it directly from github but I don't know how I would do that without reading the entire web page and having to deal with all of that html junk as well.
+
+```{r Poll Locations Data}
+
+feed <- readLines("datafeed.txt")
+
+zip_url <- feed %>% str_subset("feed_url") %>% str_sub(14,-2)
+
+
+```
+
+This is a loop to download all of the xml files and store their file paths in a list. This is just because I don't know anything about xml files and so I don't know how to convert them into data.frames. Help on this would be appreciated. But the bigger issue involves getting the loop to keep going even if a file download fails.
+
+```{r Polls Data loop}
+xpolls <- list()
+j <- 0
+td <- tempdir()
+tf <- tempfile(tmpdir=td, fileext=".zip")
+
+for (z in zip_url) {
+j <- j + 1
+download.file(z, tf)
+fname <- unzip(tf, list=TRUE)$Name[1]
+unzip(tf, files=fname, exdir=td, overwrite=TRUE)
+fpath <- file.path(td, fname)
+xpolls[[j]] <- fpath
+}
+
+
+```
+
+
+These links need to be updated with the github file locations.
+```{r Mail Voting Data}
+
+census <- read.csv("MSIS2629_TeamProject-master/Exploratory_Analysis/census_with_election_data.csv")
+
+turnout <- census$total_votes/census$X18.and.over.population
+
+census <- cbind(census,turnout)
+
+vote <- read.csv("Early Voting.csv")
+
+df <- left_join(census, vote, by=c('state.name'='State'))
+
+```
+
