@@ -1,0 +1,2508 @@
+## Datafeed for test election 2000
+
+## South Carolina
+data {
+  nid: 3020
+  election_id: 2000
+  title: "SC Test Election"
+  feed_url: "https://s3.amazonaws.com/election-2000/sc/vipFeed-45-2012-11-06.zip"
+  is_test_election: true
+  user: "tiana@votinginfoproject.org"
+}
+
+## NV Primary
+data {
+  nid: 3205
+  election_id: 2000
+  title: "NV 2014 Primary"
+  feed_url: "https://s3.amazonaws.com/election-2000/nv/VIPFeed-32-2014-06-10.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## NC Primary
+data {
+  nid: 3206
+  election_id: 2000
+  title: "NC 2014 Primary"
+  feed_url: "https://s3.amazonaws.com/election-2000/nc/vipFeed-37-2014-05-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## RI Primary
+data {
+  nid: 3203
+  election_id: 2000
+  title: "RI 2014 Municipal Primary"
+  feed_url: "https://s3.amazonaws.com/election-2000/ri/vipFeed-44-2014-02-03.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## DE Primary
+data {
+  nid: 3204
+  election_id: 2000
+  title: "DE 2014 Test Primary"
+  feed_url: "https://s3.amazonaws.com/election-2000/de/vipFeed-10-2012-09-11.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## UT Primary
+data {
+  nid: 3210
+  election_id: 2000
+  title: "UT 2014 Test Primary"
+  feed_url: "https://s3.amazonaws.com/election-2000/ut/vipFeed-49-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## NYC General
+data {
+  nid: 3211
+  election_id: 2000
+  title: "NYC 2013 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ny/vipFeed-36-2013-11-05.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## VA General
+data {
+  nid: 3212
+  election_id: 2000
+  title: "VA 2013 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/va/vipFeed-51-2013-11-05.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Alameda County General
+data {
+  nid: 3213
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06001-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Alpine County General
+data {
+  nid: 3214
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06003-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Amador County General
+data {
+  nid: 3215
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06005-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Butte County General
+data {
+  nid: 3216
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06007-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Calaveras County General
+data {
+  nid: 3217
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06009-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Colusa County General
+data {
+  nid: 3218
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06011-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Contra Costa County General
+data {
+  nid: 3219
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06013-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Del Norte County General
+data {
+  nid: 3220
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/vipFeed-06015-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## El Dorado County General
+data {
+  nid: 3221
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/vipFeed-06017-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Fresno County General
+data {
+  nid: 3222
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06019-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Glenn County General
+data {
+  nid: 3223
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06021-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Humboldt County General
+data {
+  nid: 3224
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06023-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Imperial County General
+data {
+  nid: 3225
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06025-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Inyo County General
+data {
+  nid: 3226
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06027-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Kern County General
+data {
+  nid: 3227
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06029-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Kings County General
+data {
+  nid: 3228
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06031-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Lake County General
+data {
+  nid: 3229
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06033-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Lassen County General
+data {
+  nid: 3230
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06035-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Los Angeles County General
+data {
+  nid: 3231
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06037-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Madera County General
+data {
+  nid: 3232
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06039-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Marin County General
+data {
+  nid: 3233
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06041-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Mariposa County General
+data {
+  nid: 3234
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06043-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Mendocino County General
+data {
+  nid: 3235
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06045-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Merced County General
+data {
+  nid: 3236
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06047-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Modoc County General
+data {
+  nid: 3237
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06049-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Mono County General
+data {
+  nid: 3238
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06051-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Monterey County General
+data {
+  nid: 3239
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06053-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Napa County General
+data {
+  nid: 3240
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06055-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Nevada County General
+data {
+  nid: 3241
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06057-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Orange County General
+data {
+  nid: 3242
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06059-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Placer County General
+data {
+  nid: 3243
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06061-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Plumas County General
+data {
+  nid: 3244
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06063-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Riverside County General
+data {
+  nid: 3245
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06065-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Sacramento County General
+data {
+  nid: 3246
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06067-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## San Benito County General
+data {
+  nid: 3247
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06069-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## San Bernadino County General
+data {
+  nid: 3248
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06071-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## San Diego County General
+data {
+  nid: 3249
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06073-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## San Francisco County General
+data {
+  nid: 3250
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06075-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## San Joaquin County General
+data {
+  nid: 3251
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06077-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## San Luis Obispo County General
+data {
+  nid: 3252
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06079-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## San Mateo County General
+data {
+  nid: 3253
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06081-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Santa Barbara County General
+data {
+  nid: 3254
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06083-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Santa Clara County General
+data {
+  nid: 3255
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06085-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Santa Cruz County General
+data {
+  nid: 3256
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06087-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Shasta County General
+data {
+  nid: 3257
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06089-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Sierra County General
+data {
+  nid: 3258
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06091-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Siskiyou County General
+data {
+  nid: 3259
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06093-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Solano County General
+data {
+  nid: 3260
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06095-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Sonoma County General
+data {
+  nid: 3261
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06097-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Stanislaus County General
+data {
+  nid: 3262
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06099-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Sutter County General
+data {
+  nid: 3263
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06101-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Tehama County General
+data {
+  nid: 3264
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06103-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Trinity County General
+data {
+  nid: 3265
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06105-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Tulare County General
+data {
+  nid: 3266
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06107-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Tuolumne County General
+data {
+  nid: 3267
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06109-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Ventura County General
+data {
+  nid: 3268
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06111-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Yolo County General
+data {
+  nid: 3269
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06113-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## Yuba County General
+data {
+  nid: 3270
+  election_id: 2000
+  title: "CA 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/ca/vipFeed-06115-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## MN General
+data {
+  nid: 3312
+  election_id: 2000
+  title: "MN 2012 General"
+  feed_url: "https://s3.amazonaws.com/election-2000/mn/vipFeed-27-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## MO Primary Data
+data {
+  nid: 3342
+  election_id: 2000
+  title: "MO 2014 Test Primary"
+  feed_url: "https://s3.amazonaws.com/election-2000/mo/vipFeed-29-2014-08-05.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## WI Spring Election
+data {
+  nid: 3019
+  election_id: 2000
+  title: "WI 2014 Test Election"
+  feed_url: "https://s3.amazonaws.com/election-2000/wi/vipFeed-55-2014-04-01.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## IA General
+data {
+  nid: 3351
+  election_id: 2000
+  title: "IA 2012 Test Election"
+  feed_url: "https://s3.amazonaws.com/election-2000/ia/vipFeed-19-2012-11-06.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## PA Primary
+data {
+  nid: 3354
+  election_id: 2000
+  title: "PA 2014 Test Election"
+  feed_url: "https://s3.amazonaws.com/election-2000/pa/vipFeed-42-2014-05-20.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## NM Primary
+data {
+  nid: 3359
+  election_id: 2000
+  title: "NM 2014 Primary"
+  feed_url: "https://s3.amazonaws.com/election-2000/nm/vipFeed-35-2014-06-03.zip"
+  is_test_election: true
+  user: "noma@turbovote.org"
+}
+
+## IL Test General
+data {
+  nid: 3421
+  election_id: 2000
+  title: "IL 2014 Test General"
+  feed_url: "https://s3.amazonaws.com/election-2000/il/vipFeed-17-2014-11-04.zip"
+  is_test_election: true
+  user: "noma@democracy.works"
+}
+
+## Orange County, FL Primary
+data {
+  nid: 3426
+  election_id: 2000
+  title: "Orange County Primary"
+  feed_url: "https://s3.amazonaws.com/election-2000/fl/vipFeed-12095-2014-08-26.zip"
+  is_test_election: true
+  user: "noma@democracy.works"
+}
+
+## DE Test General
+data {
+  nid: 3585
+  election_id: 2000
+  title: "DE 2014 Test General"
+  feed_url: "https://s3.amazonaws.com/election-2000/de/vipFeed-10-2014-11-04_test.zip"
+  is_test_election: true
+  user: "noma@democracy.works"
+}
+
+## END Datafeed for test election 2000
+
+## New Jersey Test Election
+data {
+  nid: 4050
+  election_id: 4102
+  title: "New Jersey Test Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds/vipfeed-00340-New-Jersey-2016-11-08.zip"
+  division_id: "ocd-division/country:us/state:al"
+  user: "maria@democracy.works"
+}
+
+## PA Test General
+data {
+  nid: 4070
+  election_id: 4102
+  title: "PA Test General"
+  feed_url: "https://data.votinginfoproject.org/feeds/pa/vipFeed-42-2015-11-03.zip"
+  division_id: "ocd-division/country:us/state:pa"
+  user: "noma@democracy.works"
+}
+
+## IL Test General (2018)
+data {
+  nid: 4071
+  election_id: 4102
+  title: "IL Test General"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-17999-Illinois-2018-03-20.zip"
+  division_id: "ocd-division/country:us/state:il"
+  user: "franklin@democracy.works"
+}
+
+## Maine Test Election
+data {
+  nid: 4078
+  election_id: 4102
+  title: "Maine Test"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds/vipfeed-23-2016-03-01.zip"
+  division_id: "ocd-division/country:us/state:me"
+  user: "maria@democracy.works"
+}
+
+## SC Test 
+data {
+  nid: 4090
+  election_id: 4102
+  title: "SC Test"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds/vipfeed-45003-2016-03-01.zip"
+  division_id: "ocd-division/country:us/state:sc"
+  user: "noma@democracy.works"
+}
+
+## NM Test 
+data {
+  nid: 4099
+  election_id: 4102
+  title: "NM Test"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds/vipfeed-35-2014-11-04.zip"
+  division_id: "ocd-division/country:us/state:nm"
+  user: "noma@democracy.works"
+}
+
+## Rhode Island Presidential Primary 
+data {
+  nid: 4108
+  election_id: 4102
+  title: "Rhode Island Presidential Primary"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds/vipfeed-44001-2016-04-26.zip"
+  division_id: "ocd-division/country:us/state:ri"
+  user: "shannon@democracy.works"
+}
+
+## TX Test Election
+data {
+  nid: 4034
+  election_id: 4102
+  title: "TX Test - D"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds/vipfeed-04804-2016-05-24.zip"
+  user: "maria@democracy.works"
+}
+
+## TX Test Election
+data {
+  nid: 4148
+  election_id: 2000
+  title: "TX Test - R"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds/vipfeed-04818-2016-05-24.zip"
+  user: "maria@democracy.works"
+}
+
+## Bexar County, TX Test Election
+data {
+  nid: 4157
+  election_id: 4102
+  title: "TX Test - Bexar"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds/vipfeed-48029-2016-05-24.zip"
+  user: "noma.daisy@gmail.com"
+}
+
+## Michigan Test Data
+data {
+  nid: 4160
+  election_id: 4102
+  title: "Michigan Primary Test"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds/vipfeed-26001-2016-08-02.zip"
+  division_id: "ocd-division/country:us/state:mi"
+  user: "maria@democracy.works"
+}
+
+## Jefferson County, TX Test
+data {
+  nid: 4163
+  election_id: 4102
+  title: "Jefferson County TX Test"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds/vipfeed-48245-2016-11-08.zip"
+  division_id: "ocd-division/country:us/state:tx"
+  user: "maria@democracy.works"
+}
+
+## Louisiana January 28 election (5.1 test)
+data {
+  nid: 4317
+  election_id: 4102
+  title: "Lousiana Test Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-22-la-empty.zip"
+  division_id: "ocd-division/country:us/state:la"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+}
+
+## Utah General Test
+data {
+  nid: 4309
+  election_id: 4102
+  title: "Utah General Test"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds/vipfeed-49001-Utah-2016-11-08.zip"
+  division_id: "ocd-division/country:us/state:ut"
+  user: "shannon@democracy.works"
+}
+
+## Special District Elections in Oregon (5.1 test election)
+data {
+  nid: 4351
+  election_id: 4102
+  title: "Special District Elections in Oregon (5.1 test election)"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds/vipfeed-41-OREGON-2017-05-16.zip"
+  division_id: "ocd-division/country:us/state:or"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+}
+
+## Municipal Primary Election in Ohio (test election)
+data {
+  nid: 10006
+  election_id: 4102
+  title: "Municipal Primary Election in Ohio"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-uploaded-feeds-20180119/vip_oh_4102_test.zip"
+  division_id: "ocd-division/country:us/state:oh"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+}
+
+## WA test precinct splits
+data {
+  nid: 10014
+  election_id: 4102
+  title: "WA test precinct splits"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds/vipfeed-53-WA-2017-10-01.zip"
+  division_id: "ocd-division/country:us/state:wa"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+}
+
+## Wyoming test 5.1 feed
+data {
+  nid: 10016
+  election_id: 4393
+  title: "Wyoming test 5.1 feed"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20170615/vipfeed-56-STATE-OF-WYOMING-2020-11-04.zip"
+  division_id: "ocd-division/country:us/state:wy"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+}
+
+## Arkansas test election
+data {
+  nid: 10028
+  election_id: 4102
+  title: "Arkansas test election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds/vipfeed-05-State-of-Arkansas-2016-11-08.zip"
+  division_id: "ocd-division/country:us/state:ar"
+  vip_version: "3.0"
+  user: "franklin@democracy.works"
+}
+
+## Louisiana test ballot feed
+data {
+  nid: 4206
+  election_id: 4102
+  title: "Louisiana test ballot feed"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-22-la-empty.zip"
+  division_id: "ocd-division/country:us/state:la"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+}
+
+## 5.1 SAMPLE FEED
+data {
+  nid: 4197
+  election_id: 4102
+  title: "5.1 SAMPLE FEED"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20170615/vipfeed-66-Virginia-2013-11-05.zip"
+  division_id: "ocd-division/country:us/state:va"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+}
+
+## Georgia's 2016 test VIP feed
+data {
+  nid: 10044
+  election_id: 4102
+  title: "Georgia test election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20170615/vipfeed-13-Georgia-2016-11-08.zip"
+  division_id: "ocd-division/country:us/state:ga"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+}
+
+## Iowa ballot inclusion 
+data {
+  nid: 10077
+  election_id: 4102
+  title: "Iowa ballot inclusion"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20170615/vipfeed-19001-STATE-OF-IOWA-2017-11-07.zip"
+  division_id: "ocd-division/country:us/state:ia"
+  vip_version: "3.0"
+  user: "franklin@democracy.works"
+}
+
+## Test Primary Contest
+data {
+  nid: 10081
+  election_id: 4102
+  title: "Test Primary Contest"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20170615/vipfeed-14001-STATE-OF-WYOMING-2016-08-16.zip"
+  division_id: "ocd-division/country:us/state:ny"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+}
+
+## Test Party Contest
+data {
+  nid: 10082
+  election_id: 4102
+  title: "Test Party Contest"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20170615/vipfeed-14002-STATE-OF-WYOMING-2016-08-16.zip"
+  division_id: "ocd-division/country:us/state:ny"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+}
+
+## Georgia 2018 test
+data {
+  nid: 10087
+  election_id: 4102
+  title: "Georgia 2018 test"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20170615/vipfeed-13-Georgia-2018-05-22.zip"
+  division_id: "ocd-division/country:us/state:ga"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+}
+
+## Virginia General Election
+data {
+  nid: 10092
+  election_id: 6000
+  title: "Virginia General Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20170615/vipfeed-51-VA-2018-11-06.zip"
+  division_id: "ocd-division/country:us/state:va"
+  vip_version: "3.0"
+  user: "franklin@democracy.works"
+}
+
+## Scituate Referendum in Rhode Island
+data {
+  nid: 10093
+  election_id: 4508
+  title: "Scituate Referendum in Rhode Island"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20170615/vipfeed-44-Rhode-Island-2018-01-23.zip"
+  division_id: "ocd-division/country:us/state:ri/place:scituate"
+  vip_version: "3.0"
+  user: "franklin@democracy.works"
+}
+
+## Municipal Primary in Louisiana
+data {
+  nid: 10094
+  election_id: 4439
+  title: "Municipal Primary in Louisiana"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-22-Louisiana-2018-03-24_ScheduleUpdate.zip"
+  division_id: "ocd-division/country:us/state:la"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+}
+
+## South Carolina State House of Representatives - District 28 Special Election
+data {
+  nid: 10095
+  election_id: 4430
+  title: "South Carolina State House of Representatives - District 28 Special Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20170615/vipfeed-45028-South-Carolina-2018-01-16.zip"
+  division_id: "ocd-division/country:us/state:sc/sldl:28"
+  vip_version: "3.0"
+  user: "franklin@democracy.works"
+}
+
+## South Carolina State House of Representatives - District 99 Special Election
+data {
+  nid: 10096
+  election_id: 4431
+  title: "South Carolina State House of Representatives - District 99 Special Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20170615/vipfeed-45099-South-Carolina-2018-01-16.zip"
+  division_id: "ocd-division/country:us/state:sc/sldl:99"
+  vip_version: "3.0"
+  user: "franklin@democracy.works"
+}
+
+## Louisiana House Special Election
+data {
+  nid: 10097
+  election_id: 4513
+  title: "Louisiana House Special Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-22-LouisianaEdit-2018-02-17.zip"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+}
+
+## Oklahoma Special Election
+data {
+  nid: 10098
+  election_id: 4509
+  title: "Oklahoma Special Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20170615/vipfeed-40-OKLAHOMA-2018-01-09.zip"
+  division_id: "ocd-division/country:us/state:ok"
+  vip_version: "3.0"
+  user: "franklin@democracy.works"
+}
+
+## Oregon Statewide Special Election
+data {
+  nid: 10099
+  election_id: 4514
+  title: "Oregon Statewide Special Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20170615/vipfeed-41-OREGON-2018-01-23.zip"
+  division_id: "ocd-division/country:us/state:or"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+}
+
+## Virginia Special Election, Town Council – Chilhowie
+data {
+  nid: 10100
+  election_id: 4432
+  title: "Virginia Special Election, Town Council – Chilhowie"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20170615/vipfeed-51-VA-2018-01-16.zip"
+  division_id: "ocd-division/country:us/state:va/place:chilhowie"
+  vip_version: "3.0"
+  user: "franklin@democracy.works"
+}
+
+## Special State Senate District 10 General Election
+data {
+  nid: 10101
+  election_id: 4510
+  title: "Special State Senate District 10 General Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20170615/vipfeed-55-Wisconsin-2018-01-16.zip"
+  division_id: "ocd-division/country:us/state:wi/sldu:10"
+  vip_version: "3.0"
+  user: "franklin@democracy.works"
+}
+
+## TX Joint Primary 2018 - Montgomery County
+data {
+  nid: 10102
+  election_id: 4437
+  title: "TX Joint Primary"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20170615/vipfeed-48339-Texas-2018-03-06.zip"
+  division_id: "ocd-division/country:us/state:tx"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## Wyoming General
+data {
+  nid: 10106
+  election_id: 6000
+  title: "Wyoming General Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20170615/vipfeed-56-STATE-OF-WYOMING-2018-11-06.zip"
+  division_id: "ocd-division/country:us/state:wy"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+}
+
+## Oklahoma School and Special Election
+data {
+  nid: 10107
+  election_id: 4520
+  title: "Oklahoma School and Special Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20170615/vipfeed-40-OKLAHOMA-2018-02-13.zip"
+  division_id: "ocd-division/country:us/state:ok"
+  vip_version: "3.0"
+  user: "franklin@democracy.works"
+}
+
+## Washington Special Election
+data {
+  nid: 10103
+  election_id: 4519
+  title: "Washington Special Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-53-Washington-2018-02-13.zip"
+  division_id: "ocd-division/country:us/state:wa"
+  vip_version: "3.0"
+  user: "kendall@turbovote.org"
+}
+
+## Alabama State House District 4 Special Republican Primary Runoff Election
+data {
+  nid: 10109
+  election_id: 4435
+  title: "Alabama State House District 4 Special Republican Primary Runoff Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-01-State-of-ALABAMA-HD-04-2018-02-27.zip"
+  division_id: "ocd-division/country:us/state:al/sldl:4"
+  vip_version: "3.0"
+  user: "kendall@turbovote.org"
+}
+
+## Alabama State Senate District 26 Special Democratic Primary Runoff Election
+data {
+  nid: 10110
+  election_id: 4436
+  title: "Alabama State Senate District 26 Special Democratic Primary Runoff Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-01-State-of-ALABAMA-SD-26-2018-02-27.zip"
+  division_id: "ocd-division/country:us/state:al/sldu:26"
+  vip_version: "3.0"
+  user: "kendall@turbovote.org"
+}
+
+## Arizona 8th Congressional District Special Primary Election
+data {
+  nid: 10111
+  election_id: 4521
+  title: "Arizona 8th Congressional District Special Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-04013-ARIZONA-2018-02-27.zip"
+  division_id: "ocd-division/country:us/state:az/cd:8"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## TX Joint Primary 2018 - Motley County
+data {
+  nid: 10112
+  election_id: 4437
+  title: "TX Joint Primary"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-48345-Texas-2018-03-06.zip"
+  division_id: "ocd-division/country:us/state:tx"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## TX Democratic Primary - Cameron and Denton Counties
+data {
+  nid: 10113
+  election_id: 4515
+  title: "TX Democratic Primary"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-48004-TEXAS-Democratic-2018-03-06.zip"
+  division_id: "ocd-division/country:us/state:tx"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## TX Republican Primary - Cameron and Denton Counties
+data {
+  nid: 10114
+  election_id: 4516
+  title: "TX Republican Primary"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-48004-TEXAS-Republican-2018-03-06.zip"
+  division_id: "ocd-division/country:us/state:tx"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+
+## TX Joint Primary - VOTEC Counties
+data {
+  nid: 10115
+  election_id: 4437
+  title: "TX Joint Primary"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-48004-TEXAS-Joint-2018-03-06.zip"
+  division_id: "ocd-division/country:us/state:tx"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## TX Joint Primary - Travis County
+data {
+  nid: 10116
+  election_id: 4437
+  title: "TX Joint Primary"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-48453-Texas-2018-03-06.zip"
+  division_id: "ocd-division/country:us/state:tx"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## Oklahoma Special Election
+data {
+  nid: 10118
+  election_id: 4522
+  title: "Oklahoma Special Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-40-OKLAHOMA-2018-03-06.zip"
+  division_id: "ocd-division/country:us/state:ok"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+}
+
+## TX Democratic Primary - PCC counties
+data {
+  nid: 10120
+  election_id: 4515
+  title: "TX Democratic Primary"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-48002-Texas---Democratic-2018-03-06.zip"
+  division_id: "ocd-division/country:us/state:tx"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## TX Republican Primary - PCC counties
+data {
+  nid: 10121
+  election_id: 4516
+  title: "TX Republican Primary"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-48002-Texas---Republican-2018-03-06.zip"
+  division_id: "ocd-division/country:us/state:tx"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## Rhode Island State Senate District 8 Primary Election
+data {
+  nid: 10119
+  election_id: 4535
+  title: "Rhode Island State Senate District 8 Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-44-Rhode-Island-2018-02-27.zip"
+  division_id: "ocd-division/country:us/state:ri/sldu:8"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+  }
+
+## Wisconsin Spring Primary Election
+data {
+  nid: 10117
+  election_id: 4434
+  title: "Wisconsin Spring Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-55-Wisconsin-2018-02-20.zip"
+  division_id: "ocd-division/country:us/state:wi"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+  }
+  
+## Louisiana Test Feed
+data {
+  nid: 10041
+  election_id: 4102
+  title: "Louisiana Test Feed"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-22-Louisiana-2018-03-17.zip"
+  division_id: "ocd-division/country:us/state:la"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+  }
+  
+## Illinois Primary Election
+data {
+  nid: 10122
+  election_id: 4438
+  title: "Illinois Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-17-Illinois-2018-03-20.zip"
+  division_id: "ocd-division/country:us/state:il"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+}
+
+## Alabama House District 21 General Special Election
+data {
+  nid: 10123
+  election_id: 4524
+  title: "Alabama House District 21 General Special Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-01-State-of-ALABAMA-2018-03-27.zip"
+  division_id: "ocd-division/country:us/state:al/sldl:21"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+}
+
+## Pennsylvania 18th Congressional District Special Election
+data {
+  nid: 10124
+  election_id: 4523
+  title: "Pennsylvania 18th Congressional District Special Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-42-Pennsylvania-2018-03-13.zip"
+  division_id: "ocd-division/country:us/state:pa/cd:18"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+}
+
+## TX Democratic Primary - Dallas County
+data {
+  nid: 10125
+  election_id: 4515
+  title: "TX Democratic Primary"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-48113-Dallas-County---Democratic-2018-03-06.zip"
+  division_id: "ocd-division/country:us/state:tx"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## TX Republican Primary - Dallas County
+data {
+  nid: 10126
+  election_id: 4516
+  title: "TX Republican Primary"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-48113-Dallas-County---Republican-2018-03-06.zip"
+  division_id: "ocd-division/country:us/state:tx"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## TX Joint Primary - Wood County
+data {
+  nid: 10127
+  election_id: 4437
+  title: "TX Joint Primary"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-48499-Wood-County-2018-03-06.zip"
+  division_id: "ocd-division/country:us/state:tx"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## TX Joint Primary - Wichita County
+data {
+  nid: 10128
+  election_id: 4437
+  title: "TX Joint Primary"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-48485-Wichita-County-2018-03-06.zip"
+  division_id: "ocd-division/country:us/state:tx"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## Illinois Primary Election
+data {
+  nid: 10129
+  election_id: 4438
+  title: "Illinois Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-17001-Illinois-2018-03-20.zip"
+  division_id: "ocd-division/country:us/state:il"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+}
+
+## Rhode Island State Senate District 8 Election
+data {
+  nid: 10130
+  election_id: 4538
+  title: "Rhode Island State Senate District 8 Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-44-Rhode-Island-2018-04-03.zip"
+  division_id: "ocd-division/country:us/state:ri/sldu:8"
+  vip_version: "3.0"
+  user: "franklin@democracy.works"
+}
+
+## Oklahoma School and Special Runoff Election
+data {
+  nid: 10131
+  election_id: 4525
+  title: "Oklahoma School and Special Runoff Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-40-OKLAHOMA-2018-04-03.zip"
+  division_id: "ocd-division/country:us/state:ok"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+}
+
+## Los Angeles County Special Election
+data {
+  nid: 10132
+  election_id: 4532
+  title: "Los Angeles County Special Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06037-California-2018-04-03.zip"
+  division_id: "ocd-division/country:us/state:ca/county:los_angeles"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+}
+
+## Virginia General Election
+data {
+  nid: 10134
+  election_id: 4530
+  title: "Virginia General Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-51-VA-2018-05-01.zip"
+  division_id: "ocd-division/country:us/state:va"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+}
+
+## Wyoming 2016 general 
+data {
+  nid: 10135
+  election_id: 4102
+  title: "Wyoming 2016 general"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20170615/vipfeed-56-STATE-OF-WYOMING-2016-11-08.zip"
+  division_id: "ocd-division/country:us/state:wy"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+}
+
+## North Carolina Primary Election
+data {
+  nid: 10136
+  election_id: 4442
+  title: "North Carolina Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-37-North-Carolina-2018-05-08.zip"
+  division_id: "ocd-division/country:us/state:nc"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+}
+
+## Arizona 8th Congressional District Special General Election
+data {
+  nid: 10137
+  election_id: 4527
+  title: "Arizona 8th Congressional District Special General Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-04013-ARIZONA-2018-04-24.zip"
+  division_id: "ocd-division/country:us/state:az/cd:8"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## Staging North Dakota
+data {
+  nid: 10138
+  election_id: 4102
+  title: "Staging North Dakota"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-38-North-Dakota-2016-06-14.zip"
+  division_id: "ocd-division/country:us/state:nd"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+}
+
+## Wisconsin Spring Election
+data {
+  nid: 10139
+  election_id: 4440
+  title: "Wisconsin Spring Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-55-Wisconsin-2018-04-03.zip"
+  division_id: "ocd-division/country:us/state:wi"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+}
+
+## Washington Special Election
+data {
+  nid: 10141
+  election_id: 4528
+  title: "Washington Special Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-53-Washington-2018-04-24.zip"
+  division_id: "ocd-division/country:us/state:wa"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+}
+
+## Georgia Primary Election
+data {
+  nid: 10142
+  election_id: 4452
+  title: "Georgia Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-13-Georgia-2018-05-22.zip"
+  division_id: "ocd-division/country:us/state:ga"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+}
+
+## North Kingstown Referendum
+data {
+  nid: 10140
+  election_id: 4542
+  title: "North Kingstown Referendum"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-44-Rhode-Island-2018-04-24.zip"
+  division_id: "ocd-division/country:us/state:ri/place:north_kingstown"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+}
+
+## Alabama House of Representatives District 4 General Special Election
+data {
+  nid: 10143
+  election_id: 4445
+  title: "Alabama House of Representatives District 4 General Special Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-01-State-of-ALABAMA---HD-04-2018-05-15.zip"
+  division_id: "ocd-division/country:us/state:al/cd:4"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+}
+
+## Alabama State Senate District 26 General Special Election
+data {
+  nid: 10144
+  election_id: 4446
+  title: "Alabama State Senate District 26 General Special Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-01-State-of-ALABAMA---SD-26-2018-05-15.zip"
+  division_id: "ocd-division/country:us/state:ar/sldu:26"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+}
+
+## Louisiana General Municipal Election
+data {
+  nid: 10146
+  election_id: 4529
+  title: "Louisiana General Municipal Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-22-Louisiana-2018-04-28.zip"
+  division_id: "ocd-division/country:us/state:la"
+  vip_version: "5.1"
+  user: "kendall@democracy.works"
+}
+
+## Wyoming Primary Election
+data {
+  nid: 10147
+  election_id: 4494
+  title: "Wyoming Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-56-STATE-OF-WYOMING-2018-08-21.zip"
+  division_id: "ocd-division/country:us/state:wy"
+  vip_version: "5.1"
+  user: "kendall@democracy.works"
+}
+
+## West Virginia Primary Election
+data {
+  nid: 10148
+  election_id: 4444
+  title: "West Virginia Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-54-WEST-VIRGINIA-2018-05-08.zip"
+  division_id: "ocd-division/country:us/state:wv"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## Indiana Primary Election
+data {
+  nid: 10149
+  election_id: 4441
+  title: "Indiana Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-18-Indiana-2018-05-08.zip"
+  division_id: "ocd-division/country:us/state:in"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+}
+
+## Texas Southernmost College Election (Cameron County)
+data {
+  nid: 10150
+  election_id: 4545
+  title: "Texas Southernmost College Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-48061-TEXAS-SOUTHMOST-COLLEGE-ELECTION-2018-05-05.zip"
+  division_id: "ocd-division/country:us/state:tx/county:cameron"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## Iowa Primary Election
+data {
+  nid: 10133
+  election_id: 4457
+  title: "Iowa Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-19-STATE-OF-IOWA-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ia"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+}
+
+## Delaware General Test
+data {
+  nid: 10151
+  election_id: 4102
+  title: "Delaware General Test"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-10-DELAWARE-2016-11-08.zip"
+  division_id: "ocd-division/country:us/state:de"
+  user: "kendall@democracy.works"
+}
+
+## Delaware General Election  
+data {
+  nid: 10152
+  election_id: 6000
+  title: "Delaware General Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-10-DELAWARE-2018-11-06.zip"
+  division_id: "ocd-division/country:us/state:de"
+  user: "kendall@democracy.works"
+}
+
+## Brownsville Navigation Election (Cameron County)
+data {
+  nid: 10153
+  election_id: 4546
+  title: "Brownsville Navigation Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-48061-BROWNSVILLE-NAVIGATION-ELECTION-2018-05-05.zip"
+  division_id: "ocd-division/country:us/state:tx/county:cameron"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## City of Port Isabel Election (Cameron County)
+data {
+  nid: 10154
+  election_id: 4547
+  title: "City of Port Isabel Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-48061-CITY-OF-PORT-ISABEL-ELECTION-2018-05-05.zip"
+  division_id: "ocd-division/country:us/state:tx/county:cameron"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## San Benito CISD Election (Cameron County)
+data {
+  nid: 10155
+  election_id: 4548
+  title: "San Benito CISD Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-48061-SAN-BENITO-CISD-ELECTION-2018-05-05.zip"
+  division_id: "ocd-division/country:us/state:tx/county:cameron"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## City of San Benito Election (Cameron County)
+data {
+  nid: 10156
+  election_id: 4549
+  title: "City of San Benito Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-48061-CITY-OF-SAN-BENITO-ELECTION-2018-05-05.zip"
+  division_id: "ocd-division/country:us/state:tx/county:cameron"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## California Primary Election - Butte County
+data {
+  nid: 10157
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06007-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Calaveras County
+data {
+  nid: 10158
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06009-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Colusa County
+data {
+  nid: 10159
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06011-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Contra Costa County
+data {
+  nid: 10160
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06013-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Glenn County
+data {
+  nid: 10161
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06021-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Inyo County
+data {
+  nid: 10162
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06027-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Madera County
+data {
+  nid: 10163
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06039-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Marin County
+data {
+  nid: 10164
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06041-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Mariposa County
+data {
+  nid: 10165
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06043-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Merced County
+data {
+  nid: 10166
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06047-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Napa County
+data {
+  nid: 10167
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06055-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Sacramento County
+data {
+  nid: 10168
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06067-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - San Benito County
+data {
+  nid: 10169
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06069-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - San Francisco County
+data {
+  nid: 10170
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06075-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - San Luis Obispo County
+data {
+  nid: 10171
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06079-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Santa Barbara County
+data {
+  nid: 10172
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06083-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Santa Cruz County
+data {
+  nid: 10173
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06087-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Sierra County
+data {
+  nid: 10174
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06091-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Tehama County
+data {
+  nid: 10175
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06103-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Tulare County
+data {
+  nid: 10176
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06107-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Ventura County
+data {
+  nid: 10177
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06111-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Yuba County
+data {
+  nid: 10178
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06115-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## Nebraska Primary Election
+data {
+  nid: 10145
+  election_id: 4448
+  title: "Nebraska Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-31-State-of-Nebraska-2018-05-15.zip"
+  division_id: "ocd-division/country:us/state:ne"
+  user: "kendall@democracy.works"
+} 
+
+## California Primary Election - San Bernardino County
+data {
+  nid: 10184
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06071-CALIFORNIA-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Siskiyou County
+data {
+  nid: 10185
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06093-CALIFORNIA-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## Arkansas Primary Election
+data {
+  nid: 10183
+  election_id: 4451
+  title: "Arkansas Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-05-State-of-Arkansas-2018-05-22.zip"
+  division_id: "ocd-division/country:us/state:ar"
+  user: "franklin@democracy.works"
+} 
+
+## California Primary Election - Lake County
+data {
+  nid: 10186
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06033-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Mendocino County
+data {
+  nid: 10187
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06045-CALIFORNIA-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Sutter County
+data {
+  nid: 10188
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06101-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  user: "sarah@democracy.works"
+} 
+
+## North Dakota Primary Election
+data {
+  nid: 10189
+  election_id: 4464
+  title: "North Dakota Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-38-North-Dakota-2018-06-12.zip"
+  division_id: "ocd-division/country:us/state:nd"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+} 
+
+## Kentucky Primary Election
+data {
+  nid: 10190
+  election_id: 4453
+  title: "Kentucky Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-21-KENTUCKY-2018-05-22.zip"
+  division_id: "ocd-division/country:us/state:ky"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+} 
+
+## Ohio Primary Election - 1of4
+data {
+  nid: 10179
+  election_id: 4443
+  title: "Ohio Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-39001-Ohio-2018-05-08.zip"
+  division_id: "ocd-division/country:us/state:oh"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+} 
+
+## Ohio Primary Election - 2of4
+data {
+  nid: 10180
+  election_id: 4443
+  title: "Ohio Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-39002-Ohio-2018-05-08.zip"
+  division_id: "ocd-division/country:us/state:oh"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+} 
+
+## Ohio Primary Election - 3of4
+data {
+  nid: 10181
+  election_id: 4443
+  title: "Ohio Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-39003-Ohio-2018-05-08.zip"
+  division_id: "ocd-division/country:us/state:oh"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+} 
+
+## Ohio Primary Election - 4of4
+data {
+  nid: 10182
+  election_id: 4443
+  title: "Ohio Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-39004-Ohio-2018-05-08.zip"
+  division_id: "ocd-division/country:us/state:oh"
+  vip_version: "5.1"
+  user: "franklin@democracy.works"
+} 
+
+## Oregon Primary Election
+data {
+  nid: 10191
+  election_id: 4449
+  title: "Oregon Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-41-OREGON-2018-05-15.zip"
+  division_id: "ocd-division/country:us/state:or"
+  vip_version: "5.1"
+  user: "kendall@democracy.works"
+} 
+
+## Maryland Primary Election
+data {
+  nid: 10192
+  election_id: 4471
+  title: "Maryland Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-24-maryland-2018-06-26.zip"
+  division_id: "ocd-division/country:us/state:md"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+} 
+
+## Idaho Primary Election
+data {
+  nid: 10193
+  election_id: 4447
+  title: "Idaho Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-16-Idaho-2018-05-15.zip"
+  division_id: "ocd-division/country:us/state:id"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+} 
+
+## Texas Joint Primary Runoff Election - Montgomery County
+data {
+  nid: 10195
+  election_id: 4454
+  title: "Texas Joint Primary Runoff Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-48339-Texas-2018-05-22.zip"
+  division_id: "ocd-division/country:us/state:tx"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+} 
+
+## Texas Joint Primary Runoff Election - Travis County
+data {
+  nid: 10196
+  election_id: 4454
+  title: "Texas Joint Primary Runoff Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-48453-Texas-2018-05-022.zip"
+  division_id: "ocd-division/country:us/state:tx"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+} 
+
+## Texas Democratic Primary Runoff Election - PCC feed
+data {
+  nid: 10197
+  election_id: 4550
+  title: "Texas Democratic Primary Runoff Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-48002-Texas---Democratic-2018-05-22.zip"
+  division_id: "ocd-division/country:us/state:tx"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+} 
+
+## Texas Republican Primary Runoff Election - PCC feed
+data {
+  nid: 10198
+  election_id: 4551
+  title: "Texas Republican Primary Runoff Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-48002-Texas---Republican-2018-05-22.zip"
+  division_id: "ocd-division/country:us/state:tx"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+} 
+
+
+## Texas Democratic Primary Runoff Election - VOTEC Counties
+data {
+  nid: 10199
+  election_id: 4550
+  title: "Texas Democratic Primary Runoff Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-48004-TEXAS-Democratic-2018-05-22.zip"
+  division_id: "ocd-division/country:us/state:tx"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+} 
+
+## Texas Republican Primary Runoff Election - VOTEC Counties
+data {
+  nid: 10200
+  election_id: 4551
+  title: "Texas Republican Primary Runoff Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-48004-TEXAS-Republican-2018-05-22.zip"
+  division_id: "ocd-division/country:us/state:tx"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+} 
+
+## Texas Joint Primary Runoff Election - VOTEC Counties
+data {
+  nid: 10201
+  election_id: 4454
+  title: "Texas Republican Primary Runoff Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-48004-TEXAS-Joint-2018-05-22.zip"
+  division_id: "ocd-division/country:us/state:tx"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Los Angeles County
+data {
+  nid: 10202
+  election_id: 4456
+  title: "California Primary Election - Los Angeles County"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06037-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+}
+
+## California Primary Election - Imperial County
+data {
+  nid: 10205
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06025-CALIFORNIA-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Mono County
+data {
+  nid: 10206
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06051-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Orange County
+data {
+  nid: 10207
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06059-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Placer County
+data {
+  nid: 10208
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06061-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Riverside County
+data {
+  nid: 10209
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06065-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Stanislaus County
+data {
+  nid: 10210
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06099-CALIFORNIA-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+} 
+
+
+## City of Long Beach Runoff Election
+data {
+  nid: 10194
+  election_id: 4552
+  title: "City of Long Beach Runoff Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-060372-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca/place:long_beach"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+}
+
+## California Primary Election - Monterey County
+data {
+  nid: 10211
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06053-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+} 
+
+## Pennsylvania Primary Election
+data {
+  nid: 10203
+  election_id: 4450
+  title: "Pennsylvania Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-42001-Pennsylvania-2018-05-15.zip"
+  division_id: "ocd-division/country:us/state:pa"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+} 
+
+## Alabama Primary Election
+data {
+  nid: 10204
+  election_id: 4455
+  title: "Alabama Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-01-State-of-ALABAMA-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:al"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+} 
+
+## California Primary Election - Kings County
+data {
+  nid: 10213
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06031-CALIFORNIA-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+} 
+
+## California Primary Election - Humboldt County
+data {
+  nid: 10214
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06023-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## California Primary Election - Alameda County
+data {
+  nid: 10215
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06001-CALIFORNIA-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## California Primary Election - Fresno County
+data {
+  nid: 10217
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06019-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## California Primary Election - Kern County
+data {
+  nid: 10218
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06029-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## District of Columbia Primary Election
+data {
+  nid: 10219
+  election_id: 4469
+  title: "District of Columbia Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-11-District-of-Columbia-2018-06-19.zip"
+  division_id: "ocd-division/country:us/state:dc"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+}
+
+## California Primary Election - Santa Clara County County
+data {
+  nid: 10220
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06085-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## California Primary Election - Sonoma County
+data {
+  nid: 10221
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06097-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## Utah Primary Election
+data {
+  nid: 10224
+  election_id: 4477
+  title: "Utah Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-49-Utah-2018-06-26.zip"
+  division_id: "ocd-division/country:us/state:ut"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+}
+
+## Sacramento County Test feed
+data {
+  nid: 10225
+  election_id: 4102
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06068-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## California Primary Election - Nevada County
+data {
+  nid: 10226
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06057-CALIFORNIA-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## California Primary Election - San Mateo County
+data {
+  nid: 10227
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06081-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+## Virginia Primary Election
+data {
+  nid: 10223
+  election_id: 4467
+  title: "Virginia Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-51-VA-2018-06-12.zip"
+  division_id: "ocd-division/country:us/state:va"
+  vip_version: "3.0"
+  user: "franklin@democracy.works"
+}
+
+## Nevada Primary Election
+data {
+  nid: 10228
+  election_id: 4465
+  title: "Nevada Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-32-Nevada-2018-06-12.zip"
+  division_id: "ocd-division/country:us/state:nv"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+}
+
+## Pawtucket City Council Election
+data {
+  nid: 10229
+  election_id: 4553
+  title: "Pawtucket City Council Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-44-Rhode-Island-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ri/place:pawtucket"
+  vip_version: "3.0"
+  user: "kendall@democracy.works"
+}
+
+## Colorado Primary Election
+data {
+  nid: 10216
+  election_id: 4470
+  title: "Colorado Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-08-Colorado-2018-06-26.zip"
+  division_id: "ocd-division/country:us/state:co"
+  vip_version: "5.1"
+  user: "kendall@democracy.works"
+}
+
+## New Mexico Primary Election
+data {
+  nid: 10222
+  election_id: 4461
+  title: "New Mexico Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-35-New-Mexico-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:nm"
+  vip_version: "5.1"
+  user: "kendall@democracy.works"
+}
+
+## Mississippi Primary Election
+data {
+  nid: 10212
+  election_id: 4458
+  title: "Mississippi Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-28-Mississippi-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ms"
+  vip_version: "3.0"
+  user: "franklin@democracy.works"
+}
+
+## California Primary Election - El Dorado County
+data {
+  nid: 10230
+  election_id: 4456
+  title: "California Primary Election"
+  feed_url: "https://s3.amazonaws.com/data-suite-production-processed-feeds-20180119/vipfeed-06017-California-2018-06-05.zip"
+  division_id: "ocd-division/country:us/state:ca"
+  vip_version: "3.0"
+  user: "sarah@democracy.works"
+}
+
+##lowest nid: -1041
+##highest nid: 10230
+##highest election_id: 4553
+# Do not reuse datasets -236, -199, -233, -234, -238, -249, -232, -247, -250,
+# -139, 3080, -255, -268, -251, -235, -269, -270, 3432, 3452, 3181, 4100, 4951
+
