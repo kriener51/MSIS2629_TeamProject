@@ -61,5 +61,17 @@ vote <- read.csv("Early Voting.csv")
 
 df <- left_join(census, vote, by=c('state.name'='State'))
 
+df <- df %>% mutate(VoteByMail = case_when(df$No.Excuse.Absentee == 1 ~ "Any Voter", df$Absentee...Excuse.Required == 1 ~ "Excused Only", df$All.Mail.Voting == 1 ~ "All Voters")) %>% data.frame()
+
 ```
 
+
+Some initial graphs to see the differences in voter turnout when vote by mail is an option.
+
+```{r Mail Ballots Graphs}
+
+ggplot(df, aes(VoteByMail,turnout)) + geom_boxplot()
+
+ggplot(df, aes(factor(Permanent.Absentee.Status),turnout)) + geom_boxplot()
+
+```
