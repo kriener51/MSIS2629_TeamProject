@@ -14,11 +14,11 @@ library(xml2)
 ```
 
 
-This datafeed file comes from a github site: https://github.com/votinginfoproject/VIP-feed-information-project/blob/master/datafeed.txt Its a JSON file and it would probably be better to read it directly from github but I don't know how I would do that without reading the entire web page and having to deal with all of that html junk as well.
+This datafeed file is maintained for the Voter Information Project to support the poll location API. Read more about the project here: http://votinginfoproject.org/. The datafeed file provides links to ZIP files containing XML files of polling place locations.
 
 ```{r Poll Locations Data}
 
-feed <- readLines("datafeed.txt")
+feed <- readLines("https://raw.githubusercontent.com/votinginfoproject/VIP-feed-information-project/master/datafeed.txt")
 
 zip_url <- feed %>% str_subset("feed_url") %>% str_sub(14,-2)
 
@@ -27,7 +27,7 @@ zip_url <- feed %>% str_subset("feed_url") %>% str_sub(14,-2)
 
 This is a loop to download all of the xml files and store their file paths in a list. This is just because I don't know anything about xml files and so I don't know how to convert them into data.frames. Help on this would be appreciated. 
 
-But the bigger issue involves getting the loop to keep going even if a file download fails...There are 237 urls, and I only got 15 in my list because of a 404 error.
+But the bigger issue involves getting the loop to keep going even if a file download fails...There are 238 urls, and I only got 15 in my list because of a 404 error. Later attempts only got me 3 files because of an invalid arguement error.
 
 ```{r Polls Data loop}
 xpolls <- list()
