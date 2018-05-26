@@ -10,11 +10,11 @@ editor_options:
 
 library(tidyverse)
 library(xml2)
+library(XML)
 
 ```
 
-
-This datafeed file is maintained for the Voter Information Project to support the poll location API. Read more about the project here: http://votinginfoproject.org/. The datafeed file provides links to ZIP files containing XML files of polling place locations.
+This code takes the Voter Information Project data feed, isolates the zip urls, then downloads and extracts the XMLs to a new location. Some of the links were broken, so the original url had to be broken into pieces every time the loop stopped. 
 
 ```{r Poll Locations Data}
 
@@ -22,27 +22,38 @@ feed <- readLines("https://raw.githubusercontent.com/votinginfoproject/VIP-feed-
 
 zip_url <- feed %>% str_subset("feed_url") %>% str_sub(14,-2)
 
+#these were used to help identify the problem zips
+zip_url1 <- zip_url[1:15] 
+zip_url2 <- zip_url[18:75]
+zip_url3 <- zip_url[90:157]
+zip_url4 <- zip_url[159:241]
 
-```
-
-This is a loop to download all of the xml files and store their file paths in a list. This is just because I don't know anything about xml files and so I don't know how to convert them into data.frames. Help on this would be appreciated. 
-
-But the bigger issue involves getting the loop to keep going even if a file download fails...There are 238 urls, and I only got 15 in my list because of a 404 error. Later attempts only got me 3 files because of an invalid arguement error.
-
-```{r Polls Data loop}
-xpolls <- list()
-j <- 0
+j <- 0 #counter keep your place with the problem urls
 td <- tempdir()
 tf <- tempfile(tmpdir=td, fileext=".zip")
 
 for (z in zip_url) {
-j <- j + 1
 download.file(z, tf)
 fname <- unzip(tf, list=TRUE)$Name[1]
-unzip(tf, files=fname, exdir=td, overwrite=TRUE)
-fpath <- file.path(td, fname)
-xpolls[[j]] <- fpath
+unzip(tf, files=fname, exdir='D://PollXMLs', overwrite=TRUE)
+j <- j + 1
 }
+
+```
+
+Now it comes to parsing all of the XML files into something useful. Unfortunately lack of familiarity with XML means we don't yet have a working conversion. 
+
+```{r Polls Data XMLs}
+
+#this will be used for looping once a conversion method is in place
+pxmls <- list.files(path = 'D://PollXMLs') 
+
+#testing conversion with a single sample file
+x <- read_xml('D://PollXMLs//Archive.zip5892875693353031553.xml')
+
+xml_contents(xml_find_all(x, ".//election/*"))
+xml_contents(xml_find_all(x, ".//locality/*"))
+xml_contents(xml_find_all(x, ".//polling_location/*"))
 
 
 ```
@@ -53,25 +64,45 @@ These links need to be updated with the github file locations.
 
 census <- read.csv("MSIS2629_TeamProject-master/Exploratory_Analysis/census_with_election_data.csv")
 
-turnout <- census$total_votes/census$X18.and.over.population
-
-census <- cbind(census,turnout)
+census <- census %>% mutate(turnout = total_votes/X18.and.over.population) %>% data.frame()
 
 vote <- read.csv("Early Voting.csv")
 
 df <- left_join(census, vote, by=c('state.name'='State'))
 
-df <- df %>% mutate(VoteByMail = case_when(df$No.Excuse.Absentee == 1 ~ "Any Voter", df$Absentee...Excuse.Required == 1 ~ "Excused Only", df$All.Mail.Voting == 1 ~ "All Voters")) %>% data.frame()
+df <- df %>% mutate(VoteByMail = case_when(df$No.Excuse.Absentee == 1 ~ "Any Voter", df$Absentee...Excuse.Required == 1 ~ "Excused Only", df$All.Mail.Voting == 1 ~ "All Voters"), AbsenteeStatus = case_when(df$Permanent.Absentee.Status == 1 ~ "Permanent", df$Permanent.Absentee.Status == 0 ~ "Per Case")) %>% data.frame()
+
+df <- df[complete.cases(df),]
 
 ```
-
 
 Some initial graphs to see the differences in voter turnout when vote by mail is an option.
 
 ```{r Mail Ballots Graphs}
 
-ggplot(df, aes(VoteByMail,turnout)) + geom_boxplot()
+ggplot(df, aes(turnout)) + geom_density() + facet_grid(VoteByMail~.)
 
-ggplot(df, aes(factor(Permanent.Absentee.Status),turnout)) + geom_boxplot()
+ggplot(df, aes(turnout)) + geom_density() + facet_grid(AbsenteeStatus~.)
+
+
+ggplot(df, aes(Percent.With.a.disability,turnout, color=VoteByMail)) + geom_smooth()
+
+ggplot(df, aes(Median.household.income,turnout, color=VoteByMail)) + geom_smooth()
+
+ggplot(df, aes(Poverty.Percentage,turnout, color=VoteByMail)) + geom_smooth()
+
+ggplot(df, aes(Drive_alone,turnout, color=VoteByMail)) + geom_smooth()
+
+ggplot(df, aes(Commute_time,turnout, color=VoteByMail)) + geom_smooth() #dig
+
+ggplot(df, aes(Median.age..years.,turnout, color=VoteByMail)) + geom_smooth()
+ggplot(df, aes(Median.age..years.,turnout, color=AbsenteeStatus)) + geom_smooth()
+
+ggplot(df, aes(White,turnout, color=VoteByMail)) + geom_smooth()
+
+ggplot(df, aes(African.American,turnout, color=VoteByMail)) + geom_smooth()
+
+ggplot(df, aes(Percent.bachelor.s.degree.or.higher,turnout, color=VoteByMail)) + geom_smooth()
 
 ```
+
