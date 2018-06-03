@@ -1,0 +1,111 @@
+---
+title: "Voter Disenfranchisement: How laws stop eligible voters"
+output:
+  slidy_presentation: default
+---
+
+
+We will be looking at how citizens of voting age can be, and are being disenfranchised in the United States of America from these three points of view - the citizens and groups that are being adversely affected by disenfranchisement (Who), how location plays into it (the Where) and the temporal concerns that contribute to it (the When). 
+
+```{r Libraries, include=FALSE}
+
+library(tidyverse)
+
+```
+
+## Electoral and temporal concerns contributing towards disenfranchisement
+Our main data source for this project comes from 2016 US Census.  We downloaded multiple files, each with various demographic information such as race, income, disability and employment. We merged these together along with results from the 2016 election to use as our main data file.
+
+Information on early voting, abseentee ballots and other mail-in ballots came from the National Council of State Legislatures. These were html tables that we entered into .csv files to use in our analysis.
+
+```{r Mail Voting Data, message=FALSE, warning=FALSE}
+
+census <- read.csv("Exploratory_Analysis/census_with_election_data.csv")
+
+census <- census %>% mutate(turnout = total_votes/X18.and.over.population) %>% data.frame()
+
+vote <- read.csv("Exploratory_Analysis/Early Voting.csv")
+
+df <- left_join(census, vote, by=c('state.name'='State'))
+
+df <- df %>% mutate(VoteByMail = case_when(df$No.Excuse.Absentee == 1 ~ "Any Voter", df$Absentee...Excuse.Required == 1 ~ "Excused Only", df$All.Mail.Voting == 1 ~ "All Voters"), AbsenteeStatus = case_when(df$Permanent.Absentee.Status == 1 ~ "Permanent", df$Permanent.Absentee.Status == 0 ~ "Per Case")) %>% data.frame()
+
+df <- df[complete.cases(df),]
+
+```
+
+
+```{r Mail Ballots Graphs Practice, eval=FALSE, include=FALSE}
+
+ggplot(df, aes(turnout)) + geom_density() + facet_grid(VoteByMail~.)
+
+ggplot(df, aes(turnout)) + geom_density() + facet_grid(AbsenteeStatus~.)
+
+
+ggplot(df, aes(Percent.With.a.disability,turnout, color=VoteByMail)) + geom_smooth()
+
+ggplot(df, aes(Median.household.income,turnout, color=VoteByMail)) + geom_smooth()
+
+ggplot(df, aes(Poverty.Percentage,turnout, color=VoteByMail)) + geom_smooth()
+
+ggplot(df, aes(Drive_alone,turnout, color=VoteByMail)) + geom_smooth()
+
+ggplot(df, aes(Commute_time,turnout, color=VoteByMail)) + geom_smooth() #dig
+
+ggplot(df, aes(Median.age..years.,turnout, color=VoteByMail)) + geom_smooth()
+ggplot(df, aes(Median.age..years.,turnout, color=AbsenteeStatus)) + geom_smooth()
+
+ggplot(df, aes(White,turnout, color=VoteByMail)) + geom_smooth()
+
+ggplot(df, aes(African.American,turnout, color=VoteByMail)) + geom_smooth()
+
+ggplot(df, aes(Percent.bachelor.s.degree.or.higher,turnout, color=VoteByMail)) + geom_smooth()
+
+```
+
+## How location plays into disenfranchisement of citizens
+The first aspect of the location approach relates to the physical polling locations. This information is handled at a county level across the United States so we are still in the process of using Google's Civic Information API to collect and transform this information. Understanding the number of polling locations as well as their distribution throughout the county should help us understand how the process of getting to the voting booth impacts voter turnout. This information is still being processed.
+
+However states are aware that some potential voters cannot physically make it to a polling location and as such there are absentee ballot options so voters not physically present may still mail in their votes. Rules regarding vote by mail vary by state, but essentially the vote by mail system turns every voter's home into a polling location, removing this barrier to access.
+
+Information on absentee ballot laws and vote by mail laws was collected from the National Council of State Legislatures. Here we merge that information into the main census data and election data file.
+
+States can then essentially be characterized as allowing vote by mail for:
+**all voters** , meaning the state sends ballots to each registered voter,
+**any voters**, meaning any registered voter can request a mail ballot, or
+**excused only**, meaning only voters with valid reasons, such as being physically unable to get to a polling place or being out of town, may request a mail ballot.
+
+## County Distribution of Voter Turnout
+
+Each graph below how the distribution of turnout across all US counties. Some are high, some lower as would be expected. But we can see that the overall turnout distribution for states with more restrictive, excuse only, mail in ballots is lower than states with more generous mail in ballot policies. By requiring that voters turn up at their local polling station in order to vote, states are making it more difficult for people to vote. Even though absentee may be an option, voters may not be aware, and so the default option is not to vote.
+
+```{r Graphs Draft Turnout Density}
+
+ggplot(df, aes(turnout)) + geom_density() + facet_grid(VoteByMail~.) 
+
+
+
+```
+
+## Voter turnout and median household county income
+
+As expected, voter turnout increases with income for all types of voters.  The area of interest here is the range of median income from about 30 to 60 thousand.  The median income for the United States is 59 thousand, so this range captures a better picture of the "average American."  In this range, voters than can get an absentee ballot with no excuse have a higher turnout than voters that do need an excuse.  This suggests that the ease of filling out a ballot at home improves the chances that someone will vote.  With today's busy lifestyle, many people probably do not have the time to wait at a polling station.  With a no-excuse absentee ballot, a voter can find room in their schedule to cast their vote.
+
+```{r Graphs Draft Turnout Income}
+
+ggplot(df, aes(Median.household.income,turnout, color=VoteByMail)) + geom_smooth()
+
+
+```
+
+## Voter turnout and Americans with disabilities
+
+From this graph we see the distribution of the turnout rates and the percentage of people with disability. Polling place inaccessibility may contribute to the lower voter turnout, both directly by making voting more difficult for people with disabilities, and indirectly by sending the message that people with disabilities are not expected to participate in the political sphere. We explore the role of polling place inaccessibility by examining voter turnout and reports of voting
+difficulties among people with disabilities in US elections. We have tried to show it for all voters group, any voters and Excused only Group.
+
+```{r Graphs Draft Turnout Disability}
+
+ggplot(df, aes(Percent.With.a.disability,turnout, color=VoteByMail)) + geom_smooth()
+
+```
+
