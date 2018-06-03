@@ -14,6 +14,7 @@ library(tidyverse)
 ```
 
 ## Electoral and temporal concerns contributing towards disenfranchisement
+
 Our main data source for this project comes from 2016 US Census.  We downloaded multiple files, each with various demographic information such as race, income, disability and employment. We merged these together along with results from the 2016 election to use as our main data file.
 
 Information on early voting, abseentee ballots and other mail-in ballots came from the National Council of State Legislatures. These were html tables that we entered into .csv files to use in our analysis.
@@ -22,13 +23,20 @@ Information on early voting, abseentee ballots and other mail-in ballots came fr
 
 census <- read.csv("Exploratory_Analysis/census_with_election_data.csv")
 
-census <- census %>% mutate(turnout = total_votes/X18.and.over.population) %>% data.frame()
+census <- census %>% mutate(
+    turnout = total_votes/X18.and.over.population) %>% data.frame()
 
 vote <- read.csv("Exploratory_Analysis/Early Voting.csv")
 
 df <- left_join(census, vote, by=c('state.name'='State'))
 
-df <- df %>% mutate(VoteByMail = case_when(df$No.Excuse.Absentee == 1 ~ "Any Voter", df$Absentee...Excuse.Required == 1 ~ "Excused Only", df$All.Mail.Voting == 1 ~ "All Voters"), AbsenteeStatus = case_when(df$Permanent.Absentee.Status == 1 ~ "Permanent", df$Permanent.Absentee.Status == 0 ~ "Per Case")) %>% data.frame()
+df <- df %>% mutate(
+    VoteByMail = case_when(df$No.Excuse.Absentee == 1 ~ "Any Voter",
+                           df$Absentee...Excuse.Required == 1 ~ "Excused Only",
+                           df$All.Mail.Voting == 1 ~ "All Voters"),
+    AbsenteeStatus = case_when(df$Permanent.Absentee.Status == 1 ~ "Permanent",
+                               df$Permanent.Absentee.Status == 0 ~ "Per Case")) %>%
+    data.frame()
 
 df <- df[complete.cases(df),]
 
@@ -36,6 +44,7 @@ df <- df[complete.cases(df),]
 
 
 ```{r Mail Ballots Graphs Practice, eval=FALSE, include=FALSE}
+#These were all of the graphs that I tested out so Kyle/Tyler if one of these is something you found significant then we can move it to a slide.
 
 ggplot(df, aes(turnout)) + geom_density() + facet_grid(VoteByMail~.)
 
@@ -64,16 +73,15 @@ ggplot(df, aes(Percent.bachelor.s.degree.or.higher,turnout, color=VoteByMail)) +
 ```
 
 ## How location plays into disenfranchisement of citizens
-The first aspect of the location approach relates to the physical polling locations. This information is handled at a county level across the United States so we are still in the process of using Google's Civic Information API to collect and transform this information. Understanding the number of polling locations as well as their distribution throughout the county should help us understand how the process of getting to the voting booth impacts voter turnout. This information is still being processed.
+
+The first aspect of the location approach relates to the physical polling locations. Most state voting systems are built on the assumption that the voter will enter a physical polling location in their registered voting district.
 
 However states are aware that some potential voters cannot physically make it to a polling location and as such there are absentee ballot options so voters not physically present may still mail in their votes. Rules regarding vote by mail vary by state, but essentially the vote by mail system turns every voter's home into a polling location, removing this barrier to access.
-
-Information on absentee ballot laws and vote by mail laws was collected from the National Council of State Legislatures. Here we merge that information into the main census data and election data file.
 
 States can then essentially be characterized as allowing vote by mail for:
 **all voters** , meaning the state sends ballots to each registered voter,
 **any voters**, meaning any registered voter can request a mail ballot, or
-**excused only**, meaning only voters with valid reasons, such as being physically unable to get to a polling place or being out of town, may request a mail ballot.
+**excused only**, meaning only voters with valid reasons, such as a physical disability or being out of town, may request a mail ballot.
 
 ## County Distribution of Voter Turnout
 
@@ -89,7 +97,7 @@ ggplot(df, aes(turnout)) + geom_density() + facet_grid(VoteByMail~.)
 
 ## Voter turnout and median household county income
 
-As expected, voter turnout increases with income for all types of voters.  The area of interest here is the range of median income from about 30 to 60 thousand.  The median income for the United States is 59 thousand, so this range captures a better picture of the "average American."  In this range, voters than can get an absentee ballot with no excuse have a higher turnout than voters that do need an excuse.  This suggests that the ease of filling out a ballot at home improves the chances that someone will vote.  With today's busy lifestyle, many people probably do not have the time to wait at a polling station.  With a no-excuse absentee ballot, a voter can find room in their schedule to cast their vote.
+As expected, voter turnout increases with income for all types of voters. The area of interest here is the range of median income from about 30 to 60 thousand. The median income for the United States is 59 thousand, so this range captures a better picture of the "average American." In this range, voters than can get an absentee ballot with no excuse have a higher turnout than voters that do need an excuse. This suggests that the ease of filling out a ballot at home improves the chances that someone will vote. With today's busy lifestyle, many people probably do not have the time to wait at a polling station. With a no-excuse absentee ballot, a voter can find room in their schedule to cast their vote.
 
 ```{r Graphs Draft Turnout Income}
 
