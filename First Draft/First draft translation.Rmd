@@ -1,0 +1,41 @@
+---
+title: "Translation"
+author: "Kyle Riener"
+date: "June 4, 2018"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(dplyr)
+#Read in data
+census_with_election= read.csv('census_with_election_data.csv')
+early = read.csv("Early Voting.csv")
+
+#Create more variables
+early['voting_difficulty'] = (early['All.Mail.Voting']*1.0) + (early['No.Excuse.Absentee']*2.0) + (early['Absentee...Excuse.Required']*3.0)
+early1 = early[,c('State','voting_difficulty')]
+
+df = left_join(census_with_election, early1, by=c('state.name'='State'))
+df['voter_turnout'] = df$total_votes/df$X18.years.and.over
+df['no_excuse'] = (df['voting_difficulty']<3)*1.0
+
+df['bcollar'] = df['Service']+ df$Natural.resources..construction..and.maintenance.occupations + df$Production..transportation..and.material.moving.occupations
+
+df['wcollar'] = df$Management..business..science..and.arts.occupations+ df$Sales.and.office.occupations
+
+df['mostly_bluecollar_county'] = (df['bcollar']>50.0)*1.0
+```
+
+```{r}
+library(ggplot2)
+bartable = aggregate(df[c("voter_turnout")],by=list(df$voting_difficulty),mean)
+barplot(bartable$voter_turnout, names.arg = bartable$Group.1)
+
+bartable = aggregate(df[c("voter_turnout")],by=list(df$no_excuse, df$mostly_bluecollar_county),mean, na.rm = TRUE)
+barplot(bartable$voter_turnout, names.arg = bartable$Group.2, col=c("green","blue"), xlab = "Mostly blue collar", ylab= "voter turnout")
+legend("right", title="No Excuse", legend= c("0","1"), fill =c("green", "blue" ), box.lty=0)
+
+ggplot(subset(df, !is.na(df$no_excuse)), aes(Per.capita.income, voter_turnout, color=factor(no_excuse))) + geom_point() + geom_smooth(method="lm", se=FALSE)
+```
