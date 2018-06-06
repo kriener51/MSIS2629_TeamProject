@@ -1,0 +1,52 @@
+State,In-Person_no excuse,Mail absentee_no excuse,Mail Absentee_excuse reqd,Mail Permanent Absentee,All-Mail_no excuse,No excuse voting period
+Alabama,0,0,1,0,0,0
+Alaska,1,1,0,0,0,15
+Arizona,1,1,0,1,0,23
+Arkansas,1,0,1,0,0,15
+California,1,1,0,1,0,28
+Colorado,1,0,0,0,1,22
+Connecticut,0,0,1,0,0,0
+Delaware,0,0,1,0,0,0
+D.C.,1,1,0,1,0,15
+Florida,1,1,0,0,0,7
+Georgia,1,1,0,0,0,19
+Hawaii,1,1,0,1,0,12
+Idaho,1,1,0,0,0,12
+Illinois,1,1,0,0,0,12
+Indiana,1,0,1,0,0,29
+Iowa,1,1,0,0,0,40
+Kansas,1,1,0,0,0,7
+Kentucky,0,0,1,0,0,0
+Louisiana,1,0,1,0,0,7
+Maine,1,1,0,0,0,30
+Maryland,1,1,0,0,0,6
+Massachusetts,1,0,1,0,0,7
+Michigan,0,0,1,0,0,0
+Minnesota,1,1,0,1,0,46
+Mississippi,0,0,1,0,0,0
+Missouri,0,0,1,0,0,0
+Montana,1,1,0,1,0,30
+Nebraska,1,1,0,0,0,35
+Nevada,1,1,0,1,0,21
+New Hampshire,0,0,1,0,0,0
+New Jersey,1,1,0,1,0,45
+New Mexico,1,1,0,0,0,26
+New York,0,0,1,0,0,0
+North Carolina,1,1,0,0,0,17
+North Dakota,1,1,0,0,0,15
+Ohio,1,1,0,0,0,27
+Oklahoma,1,1,0,0,0,4
+Oregon,1,0,0,0,1,26
+Pennsylvania,0,0,1,0,0,0
+Rhode Island,0,0,1,0,0,0
+South Carolina,0,0,1,0,0,0
+South Dakota,1,1,0,0,0,45
+Tennessee,1,0,1,0,0,15
+Texas,1,0,1,0,0,10
+Utah,1,1,0,1,0,10
+Vermont,1,1,0,0,0,45
+Virginia,0,0,1,0,0,0
+Washington,1,0,0,0,1,17
+West Virginia,1,0,1,0,0,10
+Wisconsin,1,1,0,0,0,10
+Wyoming,1,1,0,0,0,40
