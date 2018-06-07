@@ -19,26 +19,44 @@ Our main data source for this project comes from 2016 US Census.  We downloaded 
 
 Information on early voting, abseentee ballots and other mail-in ballots came from the National Council of State Legislatures. These were html tables that we entered into .csv files to use in our analysis.
 
-```{r Mail Voting Data, message=FALSE, warning=FALSE}
+```{r Load Data, message=FALSE, warning=FALSE}
 
-census <- read.csv("Exploratory_Analysis/census_with_election_data.csv")
+census <- read.csv("Exploratory_Analysis/census_with_election_data.csv") %>% 
+    mutate(turnout = total_votes/X18.and.over.population)
 
-census <- census %>% mutate(
-    turnout = total_votes/X18.and.over.population) %>% data.frame()
+laws <- read.csv("Voting Laws by State Revised.csv")
 
-vote <- read.csv("Exploratory_Analysis/Early Voting.csv")
-
-df <- left_join(census, vote, by=c('state.name'='State'))
-
-df <- df %>% mutate(
-    VoteByMail = case_when(df$No.Excuse.Absentee == 1 ~ "Any Voter",
-                           df$Absentee...Excuse.Required == 1 ~ "Excused Only",
-                           df$All.Mail.Voting == 1 ~ "All Voters"),
-    AbsenteeStatus = case_when(df$Permanent.Absentee.Status == 1 ~ "Permanent",
-                               df$Permanent.Absentee.Status == 0 ~ "Per Case")) %>%
-    data.frame()
+df <- left_join(census, laws, by=c('state.name'='State'))
 
 df <- df[complete.cases(df),]
+
+```
+
+```{r New Vars message=FALSE, warning=FALSE}
+
+df$EarlyVoting = case_when(df$EarlyVotingDays == 0 ~ "None",
+                            df$EarlyVotingDays >= 18 ~ "18 to 45",
+                            TRUE ~ "3 to 15")
+
+df$bcollar <- df$Service + df$Natural.resources..construction..and.maintenance.occupations + df$Production..transportation..and.material.moving.occupations
+
+df$wcollar <- df$Management..business..science..and.arts.occupations+ df$Sales.and.office.occupations
+
+df$MailScore <- case_when(df$VoteByMail == "All Mail" ~ 1,
+                         df$VoteByMail == "Any Absentee" ~ 2,
+                         df$VoteByMail == "Excuse Only" ~ 3)
+
+df$EarlyScore <- case_when(df$EarlyVoting == "None" ~ 3,
+                          df$EarlyVoting == "3 to 15" ~ 2,
+                          df$EarlyVoting == "18 to 45" ~ 1)
+
+df$IDScore <- case_when(df$VoterID == "No ID" ~ 1,
+                       df$VoterID == "Non Photo ID" ~ 2,
+                       df$VoterID == "Strict Non-Photo" ~ 2,
+                       df$VoterID == "Photo ID" ~ 3,
+                       df$VoterID == "Strict Photo ID" ~ 3)
+
+df$VoterScore <- df$MailScore + df$EarlyScore + df$IDScore
 
 ```
 
@@ -91,6 +109,9 @@ Each graph below how the distribution of turnout across all US counties. Some ar
 
 ggplot(df, aes(turnout)) + geom_density() + facet_grid(VoteByMail~.) 
 
+ggplot(df, aes(turnout)) + geom_density() + facet_grid(VoterID~.) 
+
+ggplot(df, aes(turnout)) + geom_density() + facet_grid(EarlyVoting~.) 
 
 
 ```
@@ -102,6 +123,10 @@ As expected, voter turnout increases with income for all types of voters. The ar
 ```{r Graphs Draft Turnout Income}
 
 ggplot(df, aes(Median.household.income,turnout, color=VoteByMail)) + geom_smooth()
+
+ggplot(df, aes(bcollar,turnout, color=VoteByMail)) + geom_smooth()
+ggplot(df, aes(bcollar,turnout, color=EarlyVoting)) + geom_smooth()
+ggplot(df, aes(bcollar,turnout, color=VoterID)) + geom_smooth()
 
 
 ```
