@@ -1,51 +1,51 @@
-State,VoterID,EarlyVotingDays,VoteByMail, AbsenteeStatus,EarlyVoting
-Alabama,Strict Photo ID,0,Excuse Only,Per Election,None
-Alaska,Non Photo ID,15,Any Absentee,Per Election,13 to 22
-Arizona,Strict Non-Photo,22,Any Absentee,Permanent,13 to 22
-Arkansas,Photo ID,15,Excuse Only,Per Election,13 to 22
-California,No ID,28,Any Absentee,Permanent,28 to 45
-Colorado,Non Photo ID,15,All Mail,Permanent,13 to 22
-Connecticut,Non Photo ID,0,Excuse Only,Per Election,None
-Delaware,Non Photo ID,0,Excuse Only,Per Election,None
-Florida,Photo ID,7,Any Absentee,Per Election,3 to 10
-Georgia,Strict Photo ID,10,Any Absentee,Per Election,3 to 10
-Hawaii,Photo ID,10,Any Absentee,Permanent,3 to 10
-Idaho,Photo ID,15,Any Absentee,Per Election,13 to 22
-Illinois,No ID,15,Any Absentee,Per Election,13 to 22
-Indiana,Strict Photo ID,28,Excuse Only,Per Election,28 to 45
-Iowa,Non Photo ID,40,Any Absentee,Per Election,28 to 45
-Kansas,Strict Photo ID,7,Any Absentee,Per Election,3 to 10
-Kentucky,Non Photo ID,0,Excuse Only,Per Election,None
-Louisiana,Photo ID,14,Excuse Only,Per Election,13 to 22
-Maine,No ID,30,Any Absentee,Per Election,28 to 45
-Maryland,No ID,14,Any Absentee,Per Election,13 to 22
-Massachusetts,No ID,0,Excuse Only,Per Election,None
-Michigan,Photo ID,0,Excuse Only,Per Election,None
-Minnesota,No ID,45,Any Absentee,Permanent,28 to 45
-Mississippi,Strict Photo ID,0,Excuse Only,Per Election,None
-Missouri,Non Photo ID,0,Excuse Only,Per Election,None
-Montana,Non Photo ID,30,Any Absentee,Permanent,28 to 45
-Nebraska,No ID,30,Any Absentee,Per Election,28 to 45
-Nevada,No ID,10,Any Absentee,Permanent,3 to 10
-New Hampshire,Non Photo ID,0,Excuse Only,Per Election,None
-New Jersey,No ID,45,Any Absentee,Permanent,28 to 45
-New Mexico,No ID,14,Any Absentee,Per Election,13 to 22
-New York,No ID,0,Excuse Only,Per Election,None
-North Carolina,Strict Non-Photo,18,Any Absentee,Per Election,13 to 22
-North Dakota,Photo ID,15,Any Absentee,Per Election,13 to 22
-Ohio,Strict Non-Photo,28,Any Absentee,Per Election,28 to 45
-Oklahoma,Photo ID,3,Any Absentee,Per Election,3 to 10
-Oregon,No ID,18,All Mail,Permanent,13 to 22
-Pennsylvania,No ID,0,Excuse Only,Per Election,None
-Rhode Island,Photo ID,0,Excuse Only,Per Election,None
-South Carolina,Photo ID,0,Excuse Only,Per Election,None
-South Dakota,Photo ID,45,Any Absentee,Per Election,28 to 45
-Tennessee,Strict Photo ID,15,Excuse Only,Per Election,13 to 22
-Texas ,Photo ID,13,Excuse Only,Per Election,13 to 22
-Utah,Non Photo ID,10,Any Absentee,Permanent,3 to 10
-Vermont,No ID,45,Any Absentee,Per Election,28 to 45
-Virginia,Strict Photo ID,0,Excuse Only,Per Election,None
-Washington,Non Photo ID,18,All Mail,Permanent,13 to 22
-West Virginia,Non Photo ID,10,Excuse Only,Per Election,3 to 10
-Wisconsin,Strict Photo ID,10,Any Absentee,Per Election,3 to 10
-Wyoming,No ID,40,Any Absentee,Per Election,28 to 45
+State,VoterID,EarlyVotingDays,VoteByMail, AbsenteeStatus
+Alabama,Strict Photo ID,0,Excuse Only,Per Election
+Connecticut,Non Photo ID,0,Excuse Only,Per Election
+Delaware,Non Photo ID,0,Excuse Only,Per Election
+Kentucky,Non Photo ID,0,Excuse Only,Per Election
+Massachusetts,No ID,0,Excuse Only,Per Election
+Michigan,Photo ID,0,Excuse Only,Per Election
+Mississippi,Strict Photo ID,0,Excuse Only,Per Election
+Missouri,Non Photo ID,0,Excuse Only,Per Election
+New Hampshire,Non Photo ID,0,Excuse Only,Per Election
+New York,No ID,0,Excuse Only,Per Election
+Pennsylvania,No ID,0,Excuse Only,Per Election
+Rhode Island,Photo ID,0,Excuse Only,Per Election
+South Carolina,Photo ID,0,Excuse Only,Per Election
+Virginia,Strict Photo ID,0,Excuse Only,Per Election
+Oklahoma,Photo ID,3,Any Absentee,Per Election
+Florida,Photo ID,7,Any Absentee,Per Election
+Kansas,Strict Photo ID,7,Any Absentee,Per Election
+Georgia,Strict Photo ID,10,Any Absentee,Per Election
+Hawaii,Photo ID,10,Any Absentee,Permanent
+Nevada,No ID,10,Any Absentee,Permanent
+Utah,Non Photo ID,10,Any Absentee,Permanent
+West Virginia,Non Photo ID,10,Excuse Only,Per Election
+Wisconsin,Strict Photo ID,10,Any Absentee,Per Election
+Texas,Photo ID,13,Excuse Only,Per Election
+Louisiana,Photo ID,14,Excuse Only,Per Election
+Maryland,No ID,14,Any Absentee,Per Election
+New Mexico,No ID,14,Any Absentee,Per Election
+Alaska,Non Photo ID,15,Any Absentee,Per Election
+Arkansas,Photo ID,15,Excuse Only,Per Election
+Colorado,Non Photo ID,15,All Mail,Permanent
+Idaho,Photo ID,15,Any Absentee,Per Election
+Illinois,No ID,15,Any Absentee,Per Election
+North Dakota,Photo ID,15,Any Absentee,Per Election
+Tennessee,Strict Photo ID,15,Excuse Only,Per Election
+North Carolina,Strict Non-Photo,18,Any Absentee,Per Election
+Oregon,No ID,18,All Mail,Permanent
+Washington,Non Photo ID,18,All Mail,Permanent
+Arizona,Strict Non-Photo,22,Any Absentee,Permanent
+California,No ID,28,Any Absentee,Permanent
+Indiana,Strict Photo ID,28,Excuse Only,Per Election
+Ohio,Strict Non-Photo,28,Any Absentee,Per Election
+Maine,No ID,30,Any Absentee,Per Election
+Montana,Non Photo ID,30,Any Absentee,Permanent
+Nebraska,No ID,30,Any Absentee,Per Election
+Iowa,Non Photo ID,40,Any Absentee,Per Election
+Wyoming,No ID,40,Any Absentee,Per Election
+Minnesota,No ID,45,Any Absentee,Permanent
+New Jersey,No ID,45,Any Absentee,Permanent
+South Dakota,Photo ID,45,Any Absentee,Per Election
+Vermont,No ID,45,Any Absentee,Per Election
