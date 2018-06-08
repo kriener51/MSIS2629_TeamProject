@@ -58,6 +58,10 @@ df$IDScore <- case_when(df$VoterID == "No ID" ~ 1,
 
 df$VoterScore <- df$MailScore + df$EarlyScore + df$IDScore
 
+df$VoteCate <- case_when(df$VoterScore <= 4 ~ "Easy",
+                         df$VoterScore >= 8 ~ "Hard",
+                         TRUE ~ "Neutral")
+
 ```
 
 
