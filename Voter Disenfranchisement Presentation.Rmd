@@ -22,7 +22,7 @@ Information on early voting, abseentee ballots and other mail-in ballots came fr
 ```{r Load Data, message=FALSE, warning=FALSE}
 
 census <- read.csv("Exploratory_Analysis/census_with_election_data.csv") %>% 
-    mutate(turnout = total_votes/X18.and.over.population)
+    mutate(turnout = (total_votes/X18.and.over.population)*100)
 
 laws <- read.csv("Voting Laws by State Revised.csv")
 
@@ -79,10 +79,11 @@ df$IncomeLevels <- case_when(df$Median.household.income < 40000 ~ "Low",
 
 ggplot(df, aes(x=turnout, group=VoteCate)) + 
     geom_density() +
+    xlim(0,100) +
     labs(x="County voters as percentage of 18 years and older population",
-         title="Flexible Voting Laws Increase Turnout during 2016 General Election",
-         subtitle="Ease of voting determined by restrictiveness of state voter ID laws, number of early voting days, and mail-in or absentee ballot provisions. Alaska excluded",
-         caption="Sources: Population and election data from U.S. Census. Voting laws from National Council of State Legislatures.") +
+         title="Flexible Voting Laws Increase Turnout",
+         subtitle="Ease of voting determined by restrictiveness of state voter ID laws, number of early voting days, and mail-in or absentee ballot provisions in 2016 General Election.",
+         caption="Sources: Population and election data from U.S. Census Bureau. Voting laws from National Council of State Legislatures. Excludes Alaska.") +
     annotate(geom = "text", x = c(46,74), y = c(.04,.045), label = c("Strict", "Flexible") , color="black", size=3) +
     theme_minimal() +
     theme(axis.title.y=element_blank(),
@@ -91,6 +92,7 @@ ggplot(df, aes(x=turnout, group=VoteCate)) +
           legend.position="none",
           panel.grid.minor=element_blank(),
           panel.grid.major=element_blank())
+
 
 ```
 
@@ -117,15 +119,20 @@ ggplot(df) + geom_density(aes(x=turnout)) + geom_density(aes(x=turnout, color=Vo
 
 ```{r Graphs Turnout and Income}
 
-ggplot(df) + geom_density(aes(x=turnout, color=VoteCate)) + 
-    facet_grid(IncomeLevels~.) +
-    labs(title="Restrictive Voting Laws Suppress Low-Income Turnout",
-         subtitle="Distribution of 2016 General Election Turnout by County",
-         caption="Counties are grouped by income, states are categorized based on the ease of voting relative to number of early voting days, mail-in ballot rules, and voter ID laws.") +
-    theme_classic +
+df %>% filter(IncomeLevels == "Low") %>% ggplot() + 
+    geom_density(aes(x=turnout, group=VoteCate)) + 
+    xlim(0,100) +
+    labs(x="County voters as percentage of 18 years and older population",
+         title="Restrictive Voting Laws Suppress Low-Income Turnout",
+         subtitle="Low income counties have much lower turnout when early voting days and mail-in ballots are curtailed and photo IDs are required in 2016 General Election.",
+         caption="Sources: Population and election data from U.S. Census Bureau. Voting laws from National Council of State Legislatures. Excludes Alaska.") +
+    annotate(geom = "text", x = c(47,72), y = c(.051,.052), label = c("Strict", "Flexible") , color="black", size=3) +    theme_minimal() +
     theme(axis.title.y=element_blank(),
           axis.text.y=element_blank(),
-          axis.ticks.y=element_blank())
+          axis.ticks.y=element_blank(),
+          legend.position="none",
+          panel.grid.minor=element_blank(),
+          panel.grid.major=element_blank())
 
 ```
 
