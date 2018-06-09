@@ -82,8 +82,8 @@ ggplot(df, aes(x=turnout, group=VoteCate)) +
     xlim(0,100) +
     labs(x="County voters as percentage of 18 years and older population",
          title="Flexible Voting Laws Increase Turnout",
-         subtitle="Ease of voting determined by restrictiveness of state voter ID laws, number of early voting days, and mail-in or absentee ballot provisions in 2016 General Election.",
-         caption="Sources: Population and election data from U.S. Census Bureau. Voting laws from National Council of State Legislatures. Excludes Alaska.") +
+         subtitle="In the 2016 general election, ease of voting is determined by restrictiveness of voter ID laws, number of early voting days, and vote by mail provisions.",
+         caption="Sources: Population and election data from the U.S. Census Bureau. Voting laws from the National Council of State Legislatures. Excludes Alaska.") +
     annotate(geom = "text", x = c(46,74), y = c(.04,.045), label = c("Strict", "Flexible") , color="black", size=3) +
     theme_minimal() +
     theme(axis.title.y=element_blank(),
@@ -124,8 +124,8 @@ df %>% filter(IncomeLevels == "Low") %>% ggplot() +
     xlim(0,100) +
     labs(x="County voters as percentage of 18 years and older population",
          title="Restrictive Voting Laws Suppress Low-Income Turnout",
-         subtitle="Low income counties have much lower turnout when early voting days and mail-in ballots are curtailed and photo IDs are required in 2016 General Election.",
-         caption="Sources: Population and election data from U.S. Census Bureau. Voting laws from National Council of State Legislatures. Excludes Alaska.") +
+         subtitle="In the 2016 general election, low-income counties see lower turnout when early voting days and mail-in ballots are curtailed and photo IDs are required.",
+         caption="Sources: Population and election data the from U.S. Census Bureau. Voting laws from the National Council of State Legislatures. Excludes Alaska.") +
     annotate(geom = "text", x = c(47,72), y = c(.051,.052), label = c("Strict", "Flexible") , color="black", size=3) +    theme_minimal() +
     theme(axis.title.y=element_blank(),
           axis.text.y=element_blank(),
