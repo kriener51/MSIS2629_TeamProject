@@ -77,13 +77,20 @@ df$IncomeLevels <- case_when(df$Median.household.income < 40000 ~ "Low",
 
 ```{r Graphs Overall Turnout Density}
 
-ggplot(df) + geom_density(aes(x=turnout, color=VoteCate)) +
-    labs(title="Flexible Voting Laws Increase Turnout",
-         subtitle="County Distribution of voting in 2016 General Election",
-         caption="Counties are grouped by a state level categorization on the ease of voting relative to number of early voting days, mail-in ballot rules, and voter ID laws.") +
+ggplot(df, aes(x=turnout, group=VoteCate)) + 
+    geom_density() +
+    labs(x="County voters as percentage of 18 years and older population",
+         title="Flexible Voting Laws Increase Turnout during 2016 General Election",
+         subtitle="Ease of voting determined by restrictiveness of state voter ID laws, number of early voting days, and mail-in or absentee ballot provisions. Alaska excluded",
+         caption="Sources: Population and election data from U.S. Census. Voting laws from National Council of State Legislatures.") +
+    annotate(geom = "text", x = c(46,74), y = c(.04,.045), label = c("Strict", "Flexible") , color="black", size=3) +
+    theme_minimal() +
     theme(axis.title.y=element_blank(),
           axis.text.y=element_blank(),
-          axis.ticks.y=element_blank())
+          axis.ticks.y=element_blank(),
+          legend.position="none",
+          panel.grid.minor=element_blank(),
+          panel.grid.major=element_blank())
 
 ```
 
