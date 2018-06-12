@@ -168,6 +168,16 @@ ggplot(df) +
     
 
 ```
+## What if turnout increased...
 
+#### Narrative Improvement
+In thinking about our overall narrative that voter disenfranchisement is an issue that negatively impacts America, we wanted to we wanted to show a sceneraio of what might happen if more voters had turned out for the 2016 election. In this particular year, a large increase in turnout would have given the election to Clinton, but hopefully in future years increasing turnout would be a bipartisan effort because the ideal of American democracy is to give everyone the opportunity to vote and make their voice heard. Voter turnout defines elections and if the U.S. wants to truely be a representative democracy, we should be striving to have as many people show up to vote as possible.
 
+#### For the full interactive dashboard please visit: https://public.tableau.com/profile/tyler.young#!/vizhome/TeamProjElection/StateDifferences
 
+![Actual Election Results for several close states.](Data/ElectionResults2016.png)
+
+![Potential Election Results with increase in voter turnout.](Data/PotentialElectionResutls2016.png)
+
+### Making of: Thoughts/Reasons
+This dashboard was not part of the first version, but we will still discuss the decisions behind the 'making of' for this visualization. The goal of this visualization was to show that increasing voter turnout could make a significant impact on the election. A parameter was created in Tableau for increasing the percentage points in voter turnout. It was designed to be applied uniformly to all counties, but prevented counties from having a turnout of over 100%. So if the slider is moved to 0.1, voter turnout is increased by 10 percentage points. The potential votes from that increase that would be added to a county were split amongst the candidates based on how the county had alread voted. The difference in total votes (both actual plus potential) for each candidate is displayed on the graph. We could have graphed 2 bars for each state with the total votes for Clinton and Trump, but when trying to maximize the data-pixel-ratio, we thought it would be better to show one bar as the difference for each state and both the direction and color of the bar indicate who would have won the election. Unnecessary gridlines were also removed. Florida and Michigan were the only two states that flipped, but several other close states were added and the ability for the user to select and states was allowed. The reason for allowing the user to pick additional states was to prevent it from seeming biased to only picking states that flipped in Clinton's favor. In reality, a user has the ability to check that only Florida and Michigan would flip with these calculations and the would both go from Trump to Clinton.
