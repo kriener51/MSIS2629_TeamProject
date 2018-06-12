@@ -21,10 +21,10 @@ Information on early voting, abseentee ballots and other mail-in ballots came fr
 
 ```{r Load Data, message=FALSE, warning=FALSE}
 
-census <- read.csv("Exploratory_Analysis/census_with_election_data.csv") %>% 
+census <- read.csv("Data/census_with_election_data.csv") %>% 
     mutate(turnout = (total_votes/X18.and.over.population)*100)
 
-laws <- read.csv("Voting Laws by State Revised.csv")
+laws <- read.csv("Data/Voting Laws by State Revised.csv")
 
 df <- left_join(census, laws, by=c('state.name'='State'))
 
