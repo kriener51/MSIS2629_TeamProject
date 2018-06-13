@@ -74,9 +74,11 @@ df$IncomeLevels <- case_when(df$Median.household.income < 40000 ~ "Low",
 
 ## County Distribution of Voter Turnout
 
+Counties with more flexible voting laws have, on average, a higher voter turnout. This implies that some people do not vote simply because they are not able to. There are multiple possible reasons for this such as not having time on a Tuesday to go vote or not having easy access to a polling location. Whether intentional or not, some states are excluding citizens from elections because the current laws and system make it too difficult to vote. We will take a deeper look into some of these possible explanations and see what factors are having the biggest impact.
+
 ![Overall County Turnout](Data/CountyTurnout.png)
 
-```{r Graphs Overall Turnout Density}
+```{r Graphs Overall Turnout Density, warning=FALSE}
 
 ggplot(df, aes(x=turnout, group=VoteCate)) + 
     geom_density() +
@@ -106,6 +108,7 @@ For counties with the lowest median household income, we wanted to visualize how
 ![Low Income County Turnout](Data/LowIncomeTurnout.png)
 
 We chose a density plot because we thought it clearly showed a difference between the different groups. We also wanted to limit unnecessary information so we removed gridlines and the y-axis, keeping only the labels for 'flexible' and 'strict'.
+
 ```{r Graphs Turnout and Income}
 
 df %>% filter(IncomeLevels == "Low") %>% ggplot() + 
@@ -128,8 +131,6 @@ df %>% filter(IncomeLevels == "Low") %>% ggplot() +
 ```
 
 ## Voter turnout in high income counties
-
-![High Income County Turnout](Data/HighIncomeTurnout.png)
 
 ```{r Graphs Drafts Income eval=FALSE, include=FALSE}
 
@@ -154,8 +155,6 @@ df %>% filter(IncomeLevels == "High") %>% ggplot() +
 
 From this graph we see the distribution of the turnout rates and the percentage of people with disability. Polling place inaccessibility may contribute to the lower voter turnout, both directly by making voting more difficult for people with disabilities, and indirectly by sending the message that people with disabilities are not expected to participate in the political sphere. We explore the role of polling place inaccessibility by examining voter turnout and reports of voting
 difficulties among people with disabilities in US elections. We have tried to show it for all voters group, any voters and Excused only Group.
-
-![Americans with Disabilities](Data/AwDisabilities.png)
 
 ```{r Graphs Draft Turnout Disability}
 
@@ -182,6 +181,7 @@ ggplot(df) +
 
 #### Narrative Improvement
 In thinking about our overall narrative that voter disenfranchisement is an issue that negatively impacts America by affecting the electoral mandate, we wanted to show a sceneraio of what might happen if more voters had turned out for the 2016 presidential election. We then perform a deeper dive into analyzing how that can happen by looking at empowering certain slices of the voting-age population. In this case, we demonstrate how restoring voting rights to felons could increase overall turnout and affect the election results. In this particular year, a large increase in the overall turnout leads to the vote margin in the state of Florida and Michigan changing from being in Donald Trump's favor to Hillary Clinton. We find that re-enfrachisement of felons could similarly lead to Florida and Michigan flipping to Clinton. In both cases, the electoral votes from those two states hand over the election to Clinton, a Democrat. This is just one way of measuring the impact of increased voter turnout on the results and that impact could be different if some other demographic groups was analyzed. Hopefully in future years increasing the voter turnout could become a bipartisan effort because the ideal of American democracy is to give everyone the opportunity to vote and make their voice heard. Voter turnout defines elections and if the U.S. wants to truly be a representative democracy, we should be striving to have as many people show up to vote as possible.
+
 
 ### 1. Across all demographics (measured at county-level)
 
