@@ -185,9 +185,9 @@ Screenshots are posted below and the interactive dashboard can be found [here](h
 
 Screenshots are posted below and the interactive dashboard can be found [here](https://public.tableau.com/profile/neville.fernandes#!/vizhome/Felonswithvotemargins/Dashboard1):
 
-![Actual Election Results for swing states.](results_no-felons.PNG)
+![Actual Election Results for swing states.](Data/results_no-felons.PNG)
 
-![Potential Election Results with increased turnout due to felon re-enfranchisement.](results_yes-felons.PNG)
+![Potential Election Results with increased turnout due to felon re-enfranchisement.](Data/results_yes-felons.PNG)
 
 The two sliders control the felon population turnout (according to the disenfranchisement laws of each state) and the percentage of felons that turnout who vote for Clinton. This change is applied to each state, the hypothetical vote totals are summed up and the difference in vote totals for Trump and Clinton graphed above. Trump wins if positive (shown in red) and Clinton wins if negative (shown in blue).
 
