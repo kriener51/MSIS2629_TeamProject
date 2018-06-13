@@ -134,6 +134,8 @@ df %>% filter(IncomeLevels == "Low") %>% ggplot() +
 
 ## Voter turnout in high income counties
 
+In contrast with the differences seen in the low income counties, higher income counties do not appear to have any differences in voter turnout based on the flexibility of their laws. The goal with this visualization is to show that high income counties seem less affected by restrictive voting laws and therefore do not have the same extend of voter suppression.
+
 ![High Income County Turnout](Data/HighIncomeTurnout.png)
 
 ```{r Graphs Drafts Income eval=FALSE, include=FALSE}
