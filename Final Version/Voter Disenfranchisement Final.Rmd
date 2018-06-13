@@ -102,7 +102,7 @@ ggplot(df, aes(x=turnout, group=VoteCate)) +
 ## Voter turnout in low income counties
 
 
-![Low Income County Turnout](Data/LowIncomeCounty.png)
+![Low Income County Turnout](Data/LowIncomeTurnout.png)
 
 ```{r Graphs Turnout and Income}
 
@@ -127,7 +127,7 @@ df %>% filter(IncomeLevels == "Low") %>% ggplot() +
 
 ## Voter turnout in high income counties
 
-![High Income County Turnout](Data/HighIncomeCounty.png)
+![High Income County Turnout](Data/HighIncomeTurnout.png)
 
 ```{r Graphs Drafts Income eval=FALSE, include=FALSE}
 
