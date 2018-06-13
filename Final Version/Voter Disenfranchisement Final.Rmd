@@ -173,7 +173,7 @@ ggplot(df) +
 #### Narrative Improvement
 In thinking about our overall narrative that voter disenfranchisement is an issue that negatively impacts America, we wanted to show a sceneraio of what might happen if more voters had turned out for the 2016 election. In this particular year, a large increase in turnout would have given the election to Clinton, but hopefully in future years increasing turnout would be a bipartisan effort because the ideal of American democracy is to give everyone the opportunity to vote and make their voice heard. Voter turnout defines elections and if the U.S. wants to truly be a representative democracy, we should be striving to have as many people show up to vote as possible.
 
-#### For the full interactive dashboard please visit: https://public.tableau.com/profile/tyler.young#!/vizhome/TeamProjElection/StateDifferences
+#### For the full interactive dashboard please visit, otherwise screenshots posted below: https://public.tableau.com/profile/tyler.young#!/vizhome/TeamProjElection/StateDifferences
 
 ![Actual Election Results for several close states.](Data/ElectionResults_2016.png)
 
