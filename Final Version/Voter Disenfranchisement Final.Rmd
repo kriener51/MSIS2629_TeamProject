@@ -1,9 +1,9 @@
 ---
-title: "Voter Disenfranchisement: How laws stop eligible voters"
 output:
   slidy_presentation: default
 ---
 
+# Voter Disenfranchisement: How laws stop eligible voters
 
 We will be looking at how citizens of voting age can be, and are being disenfranchised in the United States of America from these three points of view - the citizens and groups that are being adversely affected by disenfranchisement (Who), how location plays into it (the Where) and the temporal concerns that contribute to it (the When). 
 
