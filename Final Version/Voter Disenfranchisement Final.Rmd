@@ -74,6 +74,7 @@ df$IncomeLevels <- case_when(df$Median.household.income < 40000 ~ "Low",
 
 ## County Distribution of Voter Turnout
 
+![Overall County Turnout](Data/CountyTurnout.png)
 
 ```{r Graphs Overall Turnout Density}
 
