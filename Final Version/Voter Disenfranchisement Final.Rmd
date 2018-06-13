@@ -105,8 +105,11 @@ ggplot(df, aes(x=turnout, group=VoteCate)) +
 
 ## Voter turnout in low income counties
 
+For counties with the lowest median household income, we wanted to visualize how voting regulations affected their turnout. The graph below shows that counties in the bottom quartile for income will generally have higher rates of voter turnout the more flexible voting laws are. The encouraging takeaway is that it seems more flexible policies that remove barriers to voting have an effect on turnout, however this also means that currently some voices are being suppressed from strict voting laws. 
 
 ![Low Income County Turnout](Data/LowIncomeTurnout.png)
+
+We chose a density plot because we thought it clearly showed a difference between the different groups. We also wanted to limit unnecessary information so we removed gridlines and the y-axis, keeping only the labels for 'flexible' and 'strict'.
 
 ```{r Graphs Turnout and Income}
 
