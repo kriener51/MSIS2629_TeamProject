@@ -9,25 +9,26 @@ editor_options:
 
 Neville Fernandes, Constance McCarney, Priyanka Pandey, Kyle Riener and Tyler Young
 
-[Link to 90 sec Overview Video](https://youtu.be/2hFawQW1v2Q)
+[Brief Video Overview](https://youtu.be/2hFawQW1v2Q)
 
 ## US Voting in Theory and Practice
 
 The foundation of a representative democracy is the vote of its citizens. The government can only truly claim to represent the people when all citizens are able to exercise their right to vote. Certainly, some individuals may make a personal choice not to vote, but this too is an expression of their right. 
 
-The U.S. Constitution grants the right to vote to all citizens over the age of 18. However, the process of conducting fair elections and establishing the eligibility of voters is left to the states. As a result, obstacles may arise which discourage an individual from voting. These obstacles may be intentional, such as laws or regulations meant to exclude, or they could simply be unintended consequences based on practices or norms thought to be fair and impartial. Regardless, the result is voter suppression and it undermines the integrity and validity of our elections and government.
+The U.S. Constitution grants the right to vote to all citizens over the age of 18. However, the process of conducting fair elections and verifying the eligibility of voters is left to the states. This process creates obstacles that discourage people from voting. These obstacles may be intentional, such as laws or regulations meant to exclude, or they could simply be unintended consequences based on practices or norms thought to be fair and impartial. Regardless, the result is voter suppression and it undermines the integrity and validity of our elections and government.
 
-Voter identification laws disproportionately affect non-white and low-income voters in large parts of the US because they are less likely to have the most basic form of identification: a driver’s license. While states reasonably need to determine where polling locations will be and when the polls will be open, these very practical limitations affect low-income voters differently as they may not be able to afford taking unpaid time from work in order to stand in line on election day. 
+ While states reasonably need to determine where polling locations will be and when the polls will be open, these very practical limitations affect low-income voters differently as they may not be able to afford taking unpaid time from work in order to stand in line on election day. Voter identification laws disproportionately affect non-white and low-income voters in large parts of the US because they are less likely to have the most basic form of identification: a driver’s license. 
 
 In 2016, 6.1 million people of voting age were made ineligible to vote by felon voting laws. According to The Sentencing Project, in all but two US states incarcerated felons, those on parole or probation, or those post-incarceration cannot vote (Uggen, Shannon, & Manza, 2010). The process to re-apply for voting rights is tedious and opaque in some states. Since people of color are incarcerated at higher rates than whites, these laws also disproportionately prevent their participation as voters. 
 
 ## The Data
 
-Our main data source for this project comes surveys conducted by the US Census Bureau in 2016. We downloaded multiple files, each with various demographic information such as race, income, disability, and employment. We merged these together along with results from the 2016 election to use as our main data file. Information on early voting, absentee and mail-in ballots and voter ID laws came from the National Council of State Legislatures. These were html tables that we entered into a csv file to use in our analysis. Additionally, the [2016 Sentencing Project](http://www.sentencingproject.org/wp-content/uploads/2016/10/6-Million-Lost-Voters.pdf) provided details on the felon voting laws and estimates of the population affected at the state level, for which there was no official source before (Uggen, Shannon, & Manza, 2010).
+Our main data source for this project comes from surveys conducted by the US Census Bureau in 2016. We downloaded multiple files, each with demographic data points covering race, gender, income, disability, and employment for each county in the US. We merged these with the results from the 2016 election, also by county, to use as our main data file. However, county voting data was not available for Alaska, which is why this state has been excluded from our results. Information on early voting, absentee and mail-in ballots and voter ID laws came from the National Council of State Legislatures. These were tables and text that we entered into a csv file to use in our analysis. Additionally, the [2016 Sentencing Project](http://www.sentencingproject.org/wp-content/uploads/2016/10/6-Million-Lost-Voters.pdf) provided details on the felon voting laws and estimates of the population affected at the state level, for which there was no official source before (Uggen, Shannon, & Manza, 2010).
 
 ```{r Library and Data, message=FALSE, warning=FALSE}
 
 library(tidyverse)
+library(data.table)
 
 census <- read.csv("Data/census_with_election_data.csv") %>% 
     mutate(turnout = (total_votes/X18.and.over.population)*100)
@@ -44,21 +45,28 @@ felons_merge <- left_join(felons_all, felons_black, by=c('State'='State'))
 state_election <- read.csv("Data/state_election_data.csv")
 ```
 
-Since all of the demographic information was reported as percentages of a county population, we needed to create new category variables to better isolate the effects on the voting laws on different populations of interest. As such low, middle, and high income counties were defined and counties were designated as either containing high or low for the portion of residents with a disability.
+Since all of the demographic information was reported as percentages of a county population, we needed to create new category variables to better isolate the effects of the voting laws on different populations of interest. As such low, middle, and high income counties were defined based on the bottom and top quartiles and counties were designated as either containing high or low for the portion of residents with a disability based on the top quartile.
 
 Additionally, we ranked the level of difficulty that laws governing early voting, mail-in ballots and voter identification presented to voters on a scale of 1 to 3, with 3 being the most restrictive. Using these scores we created an overall score on the ease of voting in each state on a scale of 3 to 9. States scoring a 3 or 4 were categorized as flexible while states scoring an 8 or 9 were considered restrictive.
 
 ```{r New Vars message=FALSE, warning=FALSE}
-
-df$EarlyVoting = case_when(df$EarlyVotingDays == 0 ~ "None",
-                            df$EarlyVotingDays >= 18 ~ "18 to 45",
-                            TRUE ~ "3 to 15")
 
 df$bcollar <- df$Service + df$Natural.resources..construction..and.maintenance.occupations + df$Production..transportation..and.material.moving.occupations
 
 df$wcollar <- df$Management..business..science..and.arts.occupations+ df$Sales.and.office.occupations
 
 df$AwD <- if_else(df$Percent.With.a.disability >= 20, "High", "Low")
+
+df$DiverseCounty <- case_when(df$White <= .65 ~ "Yes",
+                              TRUE ~ "No")
+
+df$IncomeLevels <- case_when(df$Median.household.income < 40000 ~ "Low",
+                             df$Median.household.income >= 55000 ~ "High",
+                             TRUE ~ "Mid")
+
+df$EarlyVoting = case_when(df$EarlyVotingDays == 0 ~ "None",
+                            df$EarlyVotingDays >= 18 ~ "18 to 45",
+                            TRUE ~ "3 to 15")
 
 df$MailScore <- case_when(df$VoteByMail == "All Mail" ~ 1,
                          df$VoteByMail == "Any Absentee" ~ 2,
@@ -79,17 +87,12 @@ df$VoterScore <- df$MailScore + df$EarlyScore + df$IDScore
 df$VoteCate <- case_when(df$VoterScore <= 4 ~ "Easy",
                          df$VoterScore >= 8 ~ "Hard",
                          TRUE ~ "Neutral")
-
-df$DiverseCounty <- case_when(df$White <= .65 ~ "Yes",
-                              TRUE ~ "No")
-
-df$IncomeLevels <- case_when(df$Median.household.income < 40000 ~ "Low",
-                             df$Median.household.income >= 55000 ~ "High",
-                             TRUE ~ "Mid")
 ```
 
-Since the census_with_election_data master file doesn't have data election results data for Alaska, we created another data file for plotting the effect of restoring voting rights to felons (re-enfranchisement). The state-level election results were sourced from [US Election Atlas](https://uselectionatlas.org/RESULTS/) and was merged with the felon data. The missing state name fields were updated and the felon data, census data and state election data were all combined into one data frame. Finally, since the state election data had strings for numerical data, it was cleaned and converted into numeric type. 
+Since Alaska was excluded from the main file, we created another data file for plotting the effect of restoring voting rights to felons (re-enfranchisement). The state-level election results were sourced from [US Election Atlas](https://uselectionatlas.org/RESULTS/) and were merged with the felon data. The missing state name fields were updated and the felon data, census data and state election data were all combined into one data frame. 
+
 ```{r}
+
 census_DT <- as.data.table(census)
 census_DT[grepl("Alaska", census_DT$Geography_x)]$county <-  gsub(",.*$", "", census_DT[grepl("Alaska", census_DT$Geography_x)]$Geography)
 census_DT[grepl("Alaska", census_DT$Geography_x)]$st <- "AK"
@@ -113,7 +116,8 @@ df2 <- data.frame(lapply(df2, gsub, pattern = "%", replacement = ""))
 as.numeric.factor <- function(x) {as.numeric(levels(x))[x]}
 df2[, c(2:29)] <- sapply(df2[, c(2:29)], as.numeric.factor)
 
-write.csv(df2, file = "elections_with_all_felons.csv") # Write CSV in R
+# Write CSV for Tableau
+#write.csv(df2, file = "elections_with_all_felons.csv")
 
 ```
 
@@ -140,7 +144,6 @@ ggplot(df, aes(x=turnout, group=VoteCate)) +
           legend.position="none",
           panel.grid.minor=element_blank(),
           panel.grid.major=element_blank())
-          
 ```
 
 
@@ -175,6 +178,7 @@ df %>% filter(IncomeLevels == "Low") %>% ggplot() +
 Contrary to low income counties, the high income counties do not see much change in voter turnout. No matter how strict the voting laws are, the average turnout remains the same for high income voters. This suggests that wealthy citizens have an easier time voting and an advantage in getting their voices heard. It is encouraging to see such a high proportion of voters exercising their right, but these graphs highlight a gap between low and high income counties that needs to be addressed.
 
 ![High Income County Turnout](Data/HighIncomeTurnout.png)
+
 ```{r Graphs Drafts Income, warning=FALSE}
 
 df %>% filter(IncomeLevels == "High") %>% ggplot() + 
@@ -191,7 +195,6 @@ df %>% filter(IncomeLevels == "High") %>% ggplot() +
           legend.position="none",
           panel.grid.minor=element_blank(),
           panel.grid.major=element_blank())
-
 
 ```
 
@@ -258,7 +261,7 @@ These dashboards were not part of the first version, but we will still discuss t
 
 In the first visualization, the potential votes from that increase that would be added to a county were split amongst the candidates based on how the county had already voted. In the second visualization, the those potential votes were split according to value selected in the second control - the percentage of votes for Clinton. The difference in total votes (both actual plus potential) for each candidate is displayed on the graph. We could have graphed 2 bars for each state with the total votes for Clinton and Trump, but when trying to maximize the data-pixel-ratio, we thought it would be better to show one bar as the difference for each state and both the direction and color of the bar indicate who would have won the election. Unnecessary gridlines were also removed. Several of the swing states were added and the ability for the user to select states was also allowed.  In the first visualization, Florida and Michigan were the only two states that flipped, but other states come close as well. In the second visualization, all of the red states eventually flip to blue (i.e. Trump majority changed to Clinton majority) as both levers are changed to 100%. The reason for allowing the user to pick additional states was to prevent it from seeming biased to only picking states that flipped in Clinton's favor. In reality, a user has the ability to check that Florida and Michigan would flip with these calculations and they would both go from Trump to Clinton, therefore handing over the election to Clinton.
 
-# References
+## References
 
 Parlapiano, A., & Pearce, A. (Sep 2016). _For Every 10 U.S. Adults, Six Vote and Four Don’t. What Separates Them?_ From [The New York Times](https://www.nytimes.com/interactive/2016/09/13/us/politics/what-separates-voters-and-nonvoters.html).  
 Uggen, C., Manza, J. (Dec 2002). Democratic Contraction? _Political Consequences of Felon Disenfranchisement in the United States._ American Sociological Review, Vol. 67, No. 6, pp. 777-803. From [New York University](https://as.nyu.edu/content/dam/nyu-as/faculty/documents/Democratic_Contraction.pdf).  
