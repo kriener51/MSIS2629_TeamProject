@@ -42,6 +42,8 @@ df$bcollar <- df$Service + df$Natural.resources..construction..and.maintenance.o
 
 df$wcollar <- df$Management..business..science..and.arts.occupations+ df$Sales.and.office.occupations
 
+df$AwD <- if_else(df$Percent.With.a.disability >= 20, "High", "Low")
+
 df$MailScore <- case_when(df$VoteByMail == "All Mail" ~ 1,
                          df$VoteByMail == "Any Absentee" ~ 2,
                          df$VoteByMail == "Excuse Only" ~ 3)
@@ -74,8 +76,11 @@ df$IncomeLevels <- case_when(df$Median.household.income < 40000 ~ "Low",
 
 ## County Distribution of Voter Turnout
 
+Counties with more flexible voting laws have, on average, a higher voter turnout. This implies that some people do not vote simply because they are not able to. There are multiple possible reasons for this such as not having time on a Tuesday to go vote or not having easy access to a polling location. Whether intentional or not, some states are excluding citizens from elections because the current laws and system make it too difficult to vote. We will take a deeper look into some of these possible explanations and see what factors are having the biggest impact.
 
-```{r Graphs Overall Turnout Density}
+![Overall County Turnout](Data/CountyTurnout.png)
+
+```{r Graphs Overall Turnout Density, warning=FALSE}
 
 ggplot(df, aes(x=turnout, group=VoteCate)) + 
     geom_density() +
@@ -92,13 +97,17 @@ ggplot(df, aes(x=turnout, group=VoteCate)) +
           legend.position="none",
           panel.grid.minor=element_blank(),
           panel.grid.major=element_blank())
-
-#ggsave("CountyTurnout.png",width=10,height=6)
-
+          
 ```
 
 
 ## Voter turnout in low income counties
+
+For counties with the lowest median household income, we wanted to visualize how voting regulations affected their turnout. The graph below shows that counties in the bottom quartile for income will generally have higher rates of voter turnout the more flexible voting laws are. The encouraging takeaway is that it seems more flexible policies that remove barriers to voting have an effect on turnout, however this also means that currently some voices are being suppressed from strict voting laws.
+
+![Low Income County Turnout](Data/LowIncomeTurnout.png)
+
+We chose a density plot because we thought it clearly showed a difference between the different groups. We also wanted to limit unnecessary information so we removed gridlines and the y-axis, keeping only the labels for 'flexible' and 'strict'.
 
 ```{r Graphs Turnout and Income}
 
@@ -117,12 +126,10 @@ df %>% filter(IncomeLevels == "Low") %>% ggplot() +
           panel.grid.minor=element_blank(),
           panel.grid.major=element_blank())
 
-#ggsave("LowIncomeTurnout.png",width=10,height=6)
-
 ```
 
 ## Voter turnout in high income counties
-
+![High Income County Turnout](Data/HighIncomeTurnout.png)
 ```{r Graphs Drafts Income eval=FALSE, include=FALSE}
 
 df %>% filter(IncomeLevels == "High") %>% ggplot() + 
@@ -132,12 +139,13 @@ df %>% filter(IncomeLevels == "High") %>% ggplot() +
          title="ADD CLAIM HERE",
          subtitle="ADD DETAIL HERE",
          caption="Sources: Population and election data the from U.S. Census Bureau. Voting laws from the National Council of State Legislatures. Excludes Alaska.") +
-    annotate(geom = "text", x = c(47,72), y = c(.051,.052), label = c("Strict", "Flexible") , color="black", size=3) +    theme_minimal() +
+    theme_minimal() +
     theme(axis.title.y=element_blank(),
           axis.text.y=element_blank(),
           axis.ticks.y=element_blank(),
           legend.position="none",
           panel.grid.minor=element_blank(),
+          panel.grid.major=element_blank())
 
 
 ```
@@ -147,31 +155,33 @@ df %>% filter(IncomeLevels == "High") %>% ggplot() +
 From this graph we see the distribution of the turnout rates and the percentage of people with disability. Polling place inaccessibility may contribute to the lower voter turnout, both directly by making voting more difficult for people with disabilities, and indirectly by sending the message that people with disabilities are not expected to participate in the political sphere. We explore the role of polling place inaccessibility by examining voter turnout and reports of voting
 difficulties among people with disabilities in US elections. We have tried to show it for all voters group, any voters and Excused only Group.
 
+![Americans with Disbilities](Data/AwDisabilities.png)
+
+
 ```{r Graphs Draft Turnout Disability}
 
-#this needs to be redone to categorize these by disability
-
-ggplot(df) + 
-    geom_smooth(aes(Percent.With.a.disability,turnout, color=VoteCate)) +
-    geom_smooth(aes(Percent.With.a.disability,turnout))
-    
-
-
-ggplot(df) + 
-    geom_smooth(aes(Percent.With.a.disability,turnout, color=VoteByMail)) +
-    geom_smooth(aes(Percent.With.a.disability,turnout))
-    
-
-ggplot(df) + 
-    geom_smooth(aes(Percent.With.a.disability,turnout, color=EarlyVoting)) +
-    geom_smooth(aes(Percent.With.a.disability,turnout))
-    
+df %>% filter(AwD == "High") %>% ggplot() + 
+    geom_density(aes(x=turnout, group=VoteByMail)) + 
+    xlim(0,100) +
+    labs(x="County voters as percentage of 18 years and older population",
+         title="All Mail Ballots Expand Access for Americans with Disabilities",
+         subtitle="Removing barriers, like requesting an absentee ballot, improves voter turnout in counties where more than 20% of residents have a disability.",
+         caption="Sources: Population and election data the from U.S. Census Bureau. Voting laws from the National Council of State Legislatures. Excludes Alaska.") +
+    annotate(geom = "text", x = 72, y = .052, label = "All Mail Ballots", color="black", size=3) +
+    theme_minimal() +
+    theme(axis.title.y=element_blank(),
+          axis.text.y=element_blank(),
+          axis.ticks.y=element_blank(),
+          legend.position="none",
+          panel.grid.minor=element_blank(),
+          panel.grid.major=element_blank())
 
 ```
 ## What if turnout increased...
 
 #### Narrative Improvement
 In thinking about our overall narrative that voter disenfranchisement is an issue that negatively impacts America by affecting the electoral mandate, we wanted to show a sceneraio of what might happen if more voters had turned out for the 2016 presidential election. We then perform a deeper dive into analyzing how that can happen by looking at empowering certain slices of the voting-age population. In this case, we demonstrate how restoring voting rights to felons could increase overall turnout and affect the election results. In this particular year, a large increase in the overall turnout leads to the vote margin in the state of Florida and Michigan changing from being in Donald Trump's favor to Hillary Clinton. We find that re-enfrachisement of felons could similarly lead to Florida and Michigan flipping to Clinton. In both cases, the electoral votes from those two states hand over the election to Clinton, a Democrat. This is just one way of measuring the impact of increased voter turnout on the results and that impact could be different if some other demographic groups was analyzed. Hopefully in future years increasing the voter turnout could become a bipartisan effort because the ideal of American democracy is to give everyone the opportunity to vote and make their voice heard. Voter turnout defines elections and if the U.S. wants to truly be a representative democracy, we should be striving to have as many people show up to vote as possible.
+
 
 ### 1. Across all demographics (measured at county-level)
 
@@ -194,6 +204,9 @@ After increase in voter turnout due to felon re-enfrachisement
 ![Potential Election Results with increased turnout due to felon re-enfranchisement.](Data/results_yes-felons.PNG)
 
 The two sliders control the felon population turnout (according to the disenfranchisement laws of each state) and the percentage of felons that turnout who vote for Clinton. This change is applied to each state, the hypothetical vote totals are summed up and the difference in vote totals for Trump and Clinton graphed above. Trump wins if positive (shown in red) and Clinton wins if negative (shown in blue).
+
+The first slider adjusts the hypothetical turnout of disenfranchised felons, as defined by the specific restrictions valid in each state. The second slider adjusts the hypothetical percent of that felon voting population that supports candidate Clinton. In all of the state included in this graph, the state population of disenfranchised felons is greater than the margin of votes between Trump and Clinton. 
+This change is applied to each state, the hypothetical vote totals are summed up and the difference in vote totals for Trump and Clinton graphed above. Trump wins if positive (shown in red) and Clinton wins if negative (shown in blue).
 
 If the newly enfranchised felons turnout is at 30% and 69% of them vote Democrat (Uggem and Manza, 2002), then Clinton wins a majority in Florida. Michigan flips with 70% of the felon vote, if they vote at the rate the rest of the state's population (63%).
 
