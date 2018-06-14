@@ -131,7 +131,7 @@ df %>% filter(IncomeLevels == "Low") %>% ggplot() +
 ```
 
 ## Voter turnout in high income counties
-
+![High Income County Turnout](Data/HighIncomeTurnout.png)
 ```{r Graphs Drafts Income eval=FALSE, include=FALSE}
 
 df %>% filter(IncomeLevels == "High") %>% ggplot() + 
