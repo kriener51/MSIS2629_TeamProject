@@ -36,6 +36,10 @@ df <- left_join(census, laws, by=c('state.name'='State'))
 
 df <- df[complete.cases(df),]
 
+felons_all <- read.csv("Data/2016_felon_disenfranchisement_state.csv")
+
+felons_merge <- left_join(felons_all, felons_black, by=c('State'='State'))
+state_election <- read.csv("Data/state_election_data.csv")
 ```
 
 Since all of the demographic information was reported as percentages of a county population, we needed to create new category variables to better isolate the effects on the voting laws on different populations of interest. As such low, middle, and high income counties were defined and counties were designated as either containing high or low for the portion of residents with a disability.
@@ -80,9 +84,36 @@ df$DiverseCounty <- case_when(df$White <= .65 ~ "Yes",
 df$IncomeLevels <- case_when(df$Median.household.income < 40000 ~ "Low",
                              df$Median.household.income >= 55000 ~ "High",
                              TRUE ~ "Mid")
-
 ```
 
+Since the census_with_election_data master file doesn't have data election results data for Alaska, we created another data file for plotting the effect of restoring voting rights to felons (re-enfranchisement). The state-level election results were sourced from [US Election Atlas](https://uselectionatlas.org/RESULTS/) and the felon data from the [2016 Sentencing Project](http://www.sentencingproject.org/wp-content/uploads/2016/10/6-Million-Lost-Voters.pdf) (Uggen, Shannon, & Manza, 2010). 
+```{r}
+census_DT <- as.data.table(census)
+census_DT[grepl("Alaska", census_DT$Geography_x)]$county <-  gsub(",.*$", "", census_DT[grepl("Alaska", census_DT$Geography_x)]$Geography)
+census_DT[grepl("Alaska", census_DT$Geography_x)]$st <- "AK"
+census_DT[grepl("Alaska", census_DT$Geography_x)]$state.name <- "Alaska"
+
+census_DT[grepl("District", census_DT$Geography_x)]$county <-  "Washington"
+census_DT[grepl("District", census_DT$Geography_x)]$st <- "DC"
+census_DT[grepl("District", census_DT$Geography_x)]$state.name <- "District of Columbia"
+
+census_state <- census_DT %>%  group_by(state.name) %>%  summarise(Population=sum(Total.population), Males=sum(Male), Females=sum(Female), VAP=sum(X18.years.and.over), VAP_Male=sum(X18.years.and.over...Male), VAP_Female=sum(X18.years.and.over...Female))
+
+census_state <- census_state[2:52, ]
+
+df2 <- left_join(census_state, state_election, by=c('state.name'='State'))
+df2 <- left_join(df2, felons_all, by = c("state.name" = "State"))
+
+# Removing special characters from string columns and converting them to numeric
+df2 <- data.frame(lapply(df2, gsub, pattern = ",", replacement = ""))
+df2 <- data.frame(lapply(df2, gsub, pattern = "%", replacement = ""))
+
+as.numeric.factor <- function(x) {as.numeric(levels(x))[x]}
+df2[, c(2:29)] <- sapply(df2[, c(2:29)], as.numeric.factor)
+
+write.csv(df2, file = "elections_with_all_felons.csv") # Write CSV in R
+
+```
 
 ## County Distribution of Voter Turnout
 
