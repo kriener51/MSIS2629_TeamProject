@@ -187,20 +187,20 @@ In thinking about our overall narrative that voter disenfranchisement is an issu
 
 Screenshots of the before- and after-scenarios are posted below and the interactive dashboard can be found [here](https://public.tableau.com/profile/tyler.young#!/vizhome/TeamProjElection/StateDifferences):
 
-Before increase in voter turnout
+**Before increase in voter turnout**
 ![Actual Election Results for several close states.](Data/ElectionResults_2016.png)
 
-After increase in voter turnout
+**After increase in voter turnout**
 ![Potential Election Results with increase in voter turnout.](Data/PotentialElectionResults_2016.png)
 
 ### 2. Due to re-enfranchisement of felons (measured at state-level)
 
 Screenshots of the before- and after-scenarios are posted below and the interactive dashboard can be found [here](https://public.tableau.com/profile/neville.fernandes#!/vizhome/Felonswithvotemargins/Dashboard1):
 
-Before increase in voter turnout due to felon re-enfrachisement
+**Before increase in voter turnout due to felon re-enfrachisement**
 ![Actual Election Results for swing states.](Data/results_no-felons.PNG)
 
-After increase in voter turnout due to felon re-enfrachisement
+**After increase in voter turnout due to felon re-enfrachisement**
 ![Potential Election Results with increased turnout due to felon re-enfranchisement.](Data/results_yes-felons.PNG)
 
 The two sliders control the felon population turnout (according to the disenfranchisement laws of each state) and the percentage of felons that turnout who vote for Clinton. This change is applied to each state, the hypothetical vote totals are summed up and the difference in vote totals for Trump and Clinton graphed above. Trump wins if positive (shown in red) and Clinton wins if negative (shown in blue).
