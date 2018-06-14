@@ -42,6 +42,8 @@ df$bcollar <- df$Service + df$Natural.resources..construction..and.maintenance.o
 
 df$wcollar <- df$Management..business..science..and.arts.occupations+ df$Sales.and.office.occupations
 
+df$AwD <- if_else(df$Percent.With.a.disability >= 20, "High", "Low")
+
 df$MailScore <- case_when(df$VoteByMail == "All Mail" ~ 1,
                          df$VoteByMail == "Any Absentee" ~ 2,
                          df$VoteByMail == "Excuse Only" ~ 3)
@@ -93,9 +95,7 @@ ggplot(df, aes(x=turnout, group=VoteCate)) +
           legend.position="none",
           panel.grid.minor=element_blank(),
           panel.grid.major=element_blank())
-
-#ggsave("CountyTurnout.png",width=10,height=6)
-
+          
 ```
 
 
@@ -121,8 +121,6 @@ df %>% filter(IncomeLevels == "Low") %>% ggplot() +
           panel.grid.minor=element_blank(),
           panel.grid.major=element_blank())
 
-#ggsave("LowIncomeTurnout.png",width=10,height=6)
-
 ```
 
 ## Voter turnout in high income counties
@@ -138,12 +136,13 @@ df %>% filter(IncomeLevels == "High") %>% ggplot() +
          title="ADD CLAIM HERE",
          subtitle="ADD DETAIL HERE",
          caption="Sources: Population and election data the from U.S. Census Bureau. Voting laws from the National Council of State Legislatures. Excludes Alaska.") +
-    annotate(geom = "text", x = c(47,72), y = c(.051,.052), label = c("Strict", "Flexible") , color="black", size=3) +    theme_minimal() +
+    theme_minimal() +
     theme(axis.title.y=element_blank(),
           axis.text.y=element_blank(),
           axis.ticks.y=element_blank(),
           legend.position="none",
           panel.grid.minor=element_blank(),
+          panel.grid.major=element_blank())
 
 
 ```
@@ -157,23 +156,21 @@ difficulties among people with disabilities in US elections. We have tried to sh
 
 ```{r Graphs Draft Turnout Disability}
 
-#this needs to be redone to categorize these by disability
-
-ggplot(df) + 
-    geom_smooth(aes(Percent.With.a.disability,turnout, color=VoteCate)) +
-    geom_smooth(aes(Percent.With.a.disability,turnout))
-    
-
-
-ggplot(df) + 
-    geom_smooth(aes(Percent.With.a.disability,turnout, color=VoteByMail)) +
-    geom_smooth(aes(Percent.With.a.disability,turnout))
-    
-
-ggplot(df) + 
-    geom_smooth(aes(Percent.With.a.disability,turnout, color=EarlyVoting)) +
-    geom_smooth(aes(Percent.With.a.disability,turnout))
-    
+df %>% filter(AwD == "High") %>% ggplot() + 
+    geom_density(aes(x=turnout, group=VoteByMail)) + 
+    xlim(0,100) +
+    labs(x="County voters as percentage of 18 years and older population",
+         title="All Mail Ballots Expand Access for Americans with Disabilities",
+         subtitle="Removing barriers, like requesting an absentee ballot, improves voter turnout in counties where more than 20% of residents have a disability.",
+         caption="Sources: Population and election data the from U.S. Census Bureau. Voting laws from the National Council of State Legislatures. Excludes Alaska.") +
+    annotate(geom = "text", x = 72, y = .052, label = "All Mail Ballots", color="black", size=3) +
+    theme_minimal() +
+    theme(axis.title.y=element_blank(),
+          axis.text.y=element_blank(),
+          axis.ticks.y=element_blank(),
+          legend.position="none",
+          panel.grid.minor=element_blank(),
+          panel.grid.major=element_blank())
 
 ```
 ## What if turnout increased...
@@ -192,7 +189,7 @@ This dashboard was not part of the first version, but we will still discuss the 
 
 ## What if felons were enfranchised...
 
-The first slider adjusts the hypothetical turnout of disenfranchised felons, as defined by the specific restrictions valid in each state. The second slider adjusts the hypothetical percent of that felon voting population that supports candidate Clinton. In all of the state included in this graph, the state population of disenfranchised felons is greater than the margin of votes for 
+The first slider adjusts the hypothetical turnout of disenfranchised felons, as defined by the specific restrictions valid in each state. The second slider adjusts the hypothetical percent of that felon voting population that supports candidate Clinton. In all of the state included in this graph, the state population of disenfranchised felons is greater than the margin of votes between Trump and Clinton. 
 The two sliders control the felon population turnout (according to the disenfranchisement laws of each state) and the percentage of felons that turnout who vote for Clinton. This change is applied to each state, the hypothetical vote totals are summed up and the difference in vote totals for Trump and Clinton graphed above. Trump wins if positive (shown in red) and Clinton wins if negative (shown in blue).
 
 If the newly enfranchised felons turnout is at 30% and 69% of them vote Democrat (Uggem and Manza, 2002), then Clinton wins a majority in Florida. Michigan flips with 70% of the felon vote, if they vote at the rate the rest of the state's population (63%).
