@@ -1,6 +1,8 @@
 ---
 output:
   slidy_presentation: default
+editor_options: 
+  chunk_output_type: console
 ---
 
 # Voter Disenfranchisement: How laws stop eligible voters
@@ -109,7 +111,7 @@ For counties with the lowest median household income, we wanted to visualize how
 
 We chose a density plot because we thought it clearly showed a difference between the different groups. We also wanted to limit unnecessary information so we removed gridlines and the y-axis, keeping only the labels for 'flexible' and 'strict'.
 
-```{r Graphs Turnout and Income}
+```{r Graphs Turnout and Income, warning=FALSE}
 
 df %>% filter(IncomeLevels == "Low") %>% ggplot() + 
     geom_density(aes(x=turnout, group=VoteCate)) + 
@@ -129,15 +131,17 @@ df %>% filter(IncomeLevels == "Low") %>% ggplot() +
 ```
 
 ## Voter turnout in high income counties
+Contrary to low income counties, the high income counties do not see much change in voter turnout. No matter how strict the voting laws are, the average turnout remains the same for high income voters. This suggests that wealthy citizens have an easier time voting and an advantage in getting their voices heard. It is encouraging to see such a high proportion of voters exercising their right, but these graphs highlight a gap between low and high income counties that needs to be addressed.
+
 ![High Income County Turnout](Data/HighIncomeTurnout.png)
-```{r Graphs Drafts Income eval=FALSE, include=FALSE}
+```{r Graphs Drafts Income, warning=FALSE}
 
 df %>% filter(IncomeLevels == "High") %>% ggplot() + 
     geom_density(aes(x=turnout, group=VoteCate)) + 
     xlim(0,100) +
     labs(x="County voters as percentage of 18 years and older population",
-         title="ADD CLAIM HERE",
-         subtitle="ADD DETAIL HERE",
+         title="High Income Voters are Immune to Structural Barriers",
+         subtitle="Turnout in high income counties remains similar regardless of how strict voting laws are",
          caption="Sources: Population and election data the from U.S. Census Bureau. Voting laws from the National Council of State Legislatures. Excludes Alaska.") +
     theme_minimal() +
     theme(axis.title.y=element_blank(),
@@ -150,7 +154,7 @@ df %>% filter(IncomeLevels == "High") %>% ggplot() +
 
 ```
 
-## Voter turnout and Americans with disabilities
+## Voter turnout and Americans withe disabilities
 
 From this graph we see the distribution of the turnout rates and the percentage of people with disability. Polling place inaccessibility may contribute to the lower voter turnout, both directly by making voting more difficult for people with disabilities, and indirectly by sending the message that people with disabilities are not expected to participate in the political sphere. We explore the role of polling place inaccessibility by examining voter turnout and reports of voting
 difficulties among people with disabilities in US elections. We have tried to show it for all voters group, any voters and Excused only Group.
@@ -158,7 +162,7 @@ difficulties among people with disabilities in US elections. We have tried to sh
 ![Americans with Disbilities](Data/AwDisabilities.png)
 
 
-```{r Graphs Draft Turnout Disability}
+```{r Graphs Draft Turnout Disability, warning=FALSE}
 
 df %>% filter(AwD == "High") %>% ggplot() + 
     geom_density(aes(x=turnout, group=VoteByMail)) + 
@@ -185,32 +189,18 @@ In thinking about our overall narrative that voter disenfranchisement is an issu
 
 ### 1. Across all demographics (measured at county-level)
 
-Screenshots of the before- and after-scenarios are posted below and the interactive dashboard can be found [here](https://public.tableau.com/profile/tyler.young#!/vizhome/TeamProjElection/StateDifferences):
+Screenshots are posted below and the interactive dashboard can be found [here](https://public.tableau.com/profile/tyler.young#!/vizhome/TeamProjElection/StateDifferences):
 
-Before increase in voter turnout
 ![Actual Election Results for several close states.](Data/ElectionResults_2016.png)
 
-After increase in voter turnout
 ![Potential Election Results with increase in voter turnout.](Data/PotentialElectionResults_2016.png)
 
+### Making of: Thoughts/Reasons
+This dashboard was not part of the first version, but we will still discuss the decisions behind the 'making of' for this visualization. The goal of this visualization was to show that increasing voter turnout could make a significant impact on the election. A parameter was created in Tableau for increasing the percentage points in voter turnout. It was designed to be applied uniformly to all counties, but prevented counties from having a turnout of over 100%. So if the slider is moved to 0.1, voter turnout is increased by 10 percentage points. The potential votes from that increase that would be added to a county were split amongst the candidates based on how the county had already voted. The difference in total votes (both actual plus potential) for each candidate is displayed on the graph. We could have graphed 2 bars for each state with the total votes for Clinton and Trump, but when trying to maximize the data-pixel-ratio, we thought it would be better to show one bar as the difference for each state and both the direction and color of the bar indicate who would have won the election. Unnecessary gridlines were also removed. Florida and Michigan were the only two states that flipped, but several other close states were added and the ability for the user to select states was allowed. The reason for allowing the user to pick additional states was to prevent it from seeming biased to only picking states that flipped in Clinton's favor. In reality, a user has the ability to check that only Florida and Michigan would flip with these calculations and they would both go from Trump to Clinton.
+
 ### 2. Due to re-enfranchisement of felons (measured at state-level)
-
-Screenshots of the before- and after-scenarios are posted below and the interactive dashboard can be found [here](https://public.tableau.com/profile/neville.fernandes#!/vizhome/Felonswithvotemargins/Dashboard1):
-
-Before increase in voter turnout due to felon re-enfrachisement
-![Actual Election Results for swing states.](Data/results_no-felons.PNG)
-
-After increase in voter turnout due to felon re-enfrachisement
-![Potential Election Results with increased turnout due to felon re-enfranchisement.](Data/results_yes-felons.PNG)
-
-The two sliders control the felon population turnout (according to the disenfranchisement laws of each state) and the percentage of felons that turnout who vote for Clinton. This change is applied to each state, the hypothetical vote totals are summed up and the difference in vote totals for Trump and Clinton graphed above. Trump wins if positive (shown in red) and Clinton wins if negative (shown in blue).
 
 The first slider adjusts the hypothetical turnout of disenfranchised felons, as defined by the specific restrictions valid in each state. The second slider adjusts the hypothetical percent of that felon voting population that supports candidate Clinton. In all of the state included in this graph, the state population of disenfranchised felons is greater than the margin of votes between Trump and Clinton. 
 This change is applied to each state, the hypothetical vote totals are summed up and the difference in vote totals for Trump and Clinton graphed above. Trump wins if positive (shown in red) and Clinton wins if negative (shown in blue).
 
 If the newly enfranchised felons turnout is at 30% and 69% of them vote Democrat (Uggem and Manza, 2002), then Clinton wins a majority in Florida. Michigan flips with 70% of the felon vote, if they vote at the rate the rest of the state's population (63%).
-
-### Making of: Thoughts/Reasons
-This dashboard was not part of the first version, but we will still discuss the decisions behind the 'making of' for this visualization. The goal of this visualization was to show that increasing voter turnout could make a significant impact on the election. A parameter was created in Tableau for increasing the percentage points in voter turnout. It was designed to be applied uniformly to all counties, but prevented counties from having a turnout of over 100%. So if the slider is moved to 0.1, voter turnout is increased by 10 percentage points. The potential votes from that increase that would be added to a county were split amongst the candidates based on how the county had already voted. The difference in total votes (both actual plus potential) for each candidate is displayed on the graph. We could have graphed 2 bars for each state with the total votes for Clinton and Trump, but when trying to maximize the data-pixel-ratio, we thought it would be better to show one bar as the difference for each state and both the direction and color of the bar indicate who would have won the election. Unnecessary gridlines were also removed. Florida and Michigan were the only two states that flipped, but several other close states were added and the ability for the user to select states was allowed. The reason for allowing the user to pick additional states was to prevent it from seeming biased to only picking states that flipped in Clinton's favor. In reality, a user has the ability to check that only Florida and Michigan would flip with these calculations and they would both go from Trump to Clinton.
-
-
