@@ -1,6 +1,8 @@
 ---
 output:
   slidy_presentation: default
+editor_options: 
+  chunk_output_type: console
 ---
 
 # Voter Disenfranchisement: How laws stop eligible voters
@@ -109,7 +111,7 @@ For counties with the lowest median household income, we wanted to visualize how
 
 We chose a density plot because we thought it clearly showed a difference between the different groups. We also wanted to limit unnecessary information so we removed gridlines and the y-axis, keeping only the labels for 'flexible' and 'strict'.
 
-```{r Graphs Turnout and Income}
+```{r Graphs Turnout and Income, warning=FALSE}
 
 df %>% filter(IncomeLevels == "Low") %>% ggplot() + 
     geom_density(aes(x=turnout, group=VoteCate)) + 
@@ -129,15 +131,17 @@ df %>% filter(IncomeLevels == "Low") %>% ggplot() +
 ```
 
 ## Voter turnout in high income counties
+Contrary to low income counties, the high income counties do not see much change in voter turnout. No matter how strict the voting laws are, the average turnout remains the same for high income voters. This suggests that wealthy citizens have an easier time voting and an advantage in getting their voices heard. It is encouraging to see such a high proportion of voters exercising their right, but these graphs highlight a gap between low and high income counties that needs to be addressed.
+
 ![High Income County Turnout](Data/HighIncomeTurnout.png)
-```{r Graphs Drafts Income eval=FALSE, include=FALSE}
+```{r Graphs Drafts Income, warning=FALSE}
 
 df %>% filter(IncomeLevels == "High") %>% ggplot() + 
     geom_density(aes(x=turnout, group=VoteCate)) + 
     xlim(0,100) +
     labs(x="County voters as percentage of 18 years and older population",
-         title="ADD CLAIM HERE",
-         subtitle="ADD DETAIL HERE",
+         title="High Income Voters are Immune to Structural Barriers",
+         subtitle="Turnout in high income counties remains similar regardless of how strict voting laws are",
          caption="Sources: Population and election data the from U.S. Census Bureau. Voting laws from the National Council of State Legislatures. Excludes Alaska.") +
     theme_minimal() +
     theme(axis.title.y=element_blank(),
@@ -158,7 +162,7 @@ difficulties among people with disabilities in US elections. We have tried to sh
 ![Americans with Disbilities](Data/AwDisabilities.png)
 
 
-```{r Graphs Draft Turnout Disability}
+```{r Graphs Draft Turnout Disability, warning=FALSE}
 
 df %>% filter(AwD == "High") %>% ggplot() + 
     geom_density(aes(x=turnout, group=VoteByMail)) + 
@@ -185,7 +189,7 @@ In thinking about our overall narrative that voter disenfranchisement is an issu
 
 ### 1. Across all demographics (measured at county-level)
 
-Screenshots of the before- and after-scenarios are posted below and the interactive dashboard can be found [here](https://public.tableau.com/profile/tyler.young#!/vizhome/TeamProjElection/StateDifferences):
+Screenshots are posted below and the interactive dashboard can be found [here](https://public.tableau.com/profile/tyler.young#!/vizhome/TeamProjElection/StateDifferences):
 
 **Before increase in voter turnout**
 ![Actual Election Results for several close states.](Data/ElectionResults_2016.png)
