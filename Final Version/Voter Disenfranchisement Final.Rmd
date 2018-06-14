@@ -5,11 +5,11 @@ editor_options:
   chunk_output_type: console
 ---
 
-# US Voter Disenfranchisement: How state laws stop eligible voters
+# US Voter Disenfranchisement: </br>How state laws stop eligible voters
 
 Neville Fernandes, Constance McCarney, Priyanka Pandey, Kyle Riener and Tyler Young
 
-## BACKGROUND AND INTRO
+## US Voting in Theory and Practice
 
 The foundation of a representative democracy is the vote of its citizens. The government can only truly claim to represent the people when all citizens are able to exercise their right to vote. Certainly, some individuals may make a personal choice not to vote, but this too is an expression of their right. 
 
