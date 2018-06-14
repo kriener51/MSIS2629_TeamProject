@@ -185,19 +185,32 @@ In thinking about our overall narrative that voter disenfranchisement is an issu
 
 ### 1. Across all demographics (measured at county-level)
 
-Screenshots are posted below and the interactive dashboard can be found [here](https://public.tableau.com/profile/tyler.young#!/vizhome/TeamProjElection/StateDifferences):
+Screenshots of the before- and after-scenarios are posted below and the interactive dashboard can be found [here](https://public.tableau.com/profile/tyler.young#!/vizhome/TeamProjElection/StateDifferences):
 
+Before increase in voter turnout
 ![Actual Election Results for several close states.](Data/ElectionResults_2016.png)
 
+After increase in voter turnout
 ![Potential Election Results with increase in voter turnout.](Data/PotentialElectionResults_2016.png)
 
-### Making of: Thoughts/Reasons
-This dashboard was not part of the first version, but we will still discuss the decisions behind the 'making of' for this visualization. The goal of this visualization was to show that increasing voter turnout could make a significant impact on the election. A parameter was created in Tableau for increasing the percentage points in voter turnout. It was designed to be applied uniformly to all counties, but prevented counties from having a turnout of over 100%. So if the slider is moved to 0.1, voter turnout is increased by 10 percentage points. The potential votes from that increase that would be added to a county were split amongst the candidates based on how the county had already voted. The difference in total votes (both actual plus potential) for each candidate is displayed on the graph. We could have graphed 2 bars for each state with the total votes for Clinton and Trump, but when trying to maximize the data-pixel-ratio, we thought it would be better to show one bar as the difference for each state and both the direction and color of the bar indicate who would have won the election. Unnecessary gridlines were also removed. Florida and Michigan were the only two states that flipped, but several other close states were added and the ability for the user to select states was allowed. The reason for allowing the user to pick additional states was to prevent it from seeming biased to only picking states that flipped in Clinton's favor. In reality, a user has the ability to check that only Florida and Michigan would flip with these calculations and they would both go from Trump to Clinton.
-
 ### 2. Due to re-enfranchisement of felons (measured at state-level)
+
+Screenshots of the before- and after-scenarios are posted below and the interactive dashboard can be found [here](https://public.tableau.com/profile/neville.fernandes#!/vizhome/Felonswithvotemargins/Dashboard1):
+
+Before increase in voter turnout due to felon re-enfrachisement
+![Actual Election Results for swing states.](Data/results_no-felons.PNG)
+
+After increase in voter turnout due to felon re-enfrachisement
+![Potential Election Results with increased turnout due to felon re-enfranchisement.](Data/results_yes-felons.PNG)
+
+The two sliders control the felon population turnout (according to the disenfranchisement laws of each state) and the percentage of felons that turnout who vote for Clinton. This change is applied to each state, the hypothetical vote totals are summed up and the difference in vote totals for Trump and Clinton graphed above. Trump wins if positive (shown in red) and Clinton wins if negative (shown in blue).
 
 The first slider adjusts the hypothetical turnout of disenfranchised felons, as defined by the specific restrictions valid in each state. The second slider adjusts the hypothetical percent of that felon voting population that supports candidate Clinton. In all of the state included in this graph, the state population of disenfranchised felons is greater than the margin of votes between Trump and Clinton. 
 This change is applied to each state, the hypothetical vote totals are summed up and the difference in vote totals for Trump and Clinton graphed above. Trump wins if positive (shown in red) and Clinton wins if negative (shown in blue).
 
 If the newly enfranchised felons turnout is at 30% and 69% of them vote Democrat (Uggem and Manza, 2002), then Clinton wins a majority in Florida. Michigan flips with 70% of the felon vote, if they vote at the rate the rest of the state's population (63%).
+
+### Making of: Thoughts/Reasons
+This dashboard was not part of the first version, but we will still discuss the decisions behind the 'making of' for this visualization. The goal of this visualization was to show that increasing voter turnout could make a significant impact on the election. A parameter was created in Tableau for increasing the percentage points in voter turnout. It was designed to be applied uniformly to all counties, but prevented counties from having a turnout of over 100%. So if the slider is moved to 0.1, voter turnout is increased by 10 percentage points. The potential votes from that increase that would be added to a county were split amongst the candidates based on how the county had already voted. The difference in total votes (both actual plus potential) for each candidate is displayed on the graph. We could have graphed 2 bars for each state with the total votes for Clinton and Trump, but when trying to maximize the data-pixel-ratio, we thought it would be better to show one bar as the difference for each state and both the direction and color of the bar indicate who would have won the election. Unnecessary gridlines were also removed. Florida and Michigan were the only two states that flipped, but several other close states were added and the ability for the user to select states was allowed. The reason for allowing the user to pick additional states was to prevent it from seeming biased to only picking states that flipped in Clinton's favor. In reality, a user has the ability to check that only Florida and Michigan would flip with these calculations and they would both go from Trump to Clinton.
+
 
