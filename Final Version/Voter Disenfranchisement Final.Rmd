@@ -179,7 +179,7 @@ df %>% filter(AwD == "High") %>% ggplot() +
 ```
 ## What if turnout increased...
 
-#### Narrative Improvement
+### Narrative Improvement
 In thinking about our overall narrative that voter disenfranchisement is an issue that negatively impacts America by affecting the electoral mandate, we wanted to show a sceneraio of what might happen if more voters had turned out for the 2016 presidential election. We then perform a deeper dive into analyzing how that can happen by looking at empowering certain slices of the voting-age population. In this case, we demonstrate how restoring voting rights to felons could increase overall turnout and affect the election results. In this particular year, a large increase in the overall turnout leads to the vote margin in the state of Florida and Michigan changing from being in Donald Trump's favor to Hillary Clinton. We find that re-enfrachisement of felons could similarly lead to Florida and Michigan flipping to Clinton. In both cases, the electoral votes from those two states hand over the election to Clinton, a Democrat. This is just one way of measuring the impact of increased voter turnout on the results and that impact could be different if some other demographic groups was analyzed. Hopefully in future years increasing the voter turnout could become a bipartisan effort because the ideal of American democracy is to give everyone the opportunity to vote and make their voice heard. Voter turnout defines elections and if the U.S. wants to truly be a representative democracy, we should be striving to have as many people show up to vote as possible.
 
 
