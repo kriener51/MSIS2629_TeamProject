@@ -5,23 +5,27 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Voter Disenfranchisement: How laws stop eligible voters
+# US Voter Disenfranchisement: How state laws stop eligible voters
 
-We will be looking at how citizens of voting age can be, and are being disenfranchised in the United States of America from these three points of view - the citizens and groups that are being adversely affected by disenfranchisement (Who), how location plays into it (the Where) and the temporal concerns that contribute to it (the When). 
+Neville Fernandes, Constance McCarney, Priyanka Pandey, Kyle Riener and Tyler Young
 
-```{r Libraries, include=FALSE}
+## BACKGROUND AND INTRO
+
+The foundation of a representative democracy is the vote of its citizens. The government can only truly claim to represent the people when all citizens are able to exercise their right to vote. Certainly, some individuals may make a personal choice not to vote, but this too is an expression of their right. 
+
+The U.S. Constitution grants the right to vote to all citizens over the age of 18. However, the process of conducting fair elections and establishing the eligibility of voters is left to the states. As a result, obstacles may arise which discourage an individual from voting. These obstacles may be intentional, such as laws or regulations meant to exclude, or they could simply be unintended consequences based on practices or norms thought to be fair and impartial. Regardless, the result is voter suppression and it undermines the integrity and validity of our elections and government.
+
+Voter identification laws disproportionately affect non-white and low-income voters in large parts of the US because they are less likely to have the most basic form of identification: a driver’s license. While states reasonably need to determine where polling locations will be and when the polls will be open, these very practical limitations affect low-income voters differently as they may not be able to afford taking unpaid time from work in order to stand in line on election day. 
+
+In 2016, 6.1 million people of voting age were made ineligible to vote by felon voting laws. According to The Sentencing Project, in all but two US states incarcerated felons, those on parole or probation, or those post-incarceration cannot vote (Uggen, Shannon, & Manza, 2010). The process to re-apply for voting rights is tedious and opaque in some states. Since people of color are incarcerated at higher rates than whites, these laws also disproportionately prevent their participation as voters. 
+
+## The Data
+
+Our main data source for this project comes surveys conducted by the US Census Bureau in 2016. We downloaded multiple files, each with various demographic information such as race, income, disability, and employment. We merged these together along with results from the 2016 election to use as our main data file. Information on early voting, absentee and mail-in ballots and voter ID laws came from the National Council of State Legislatures. These were html tables that we entered into a csv file to use in our analysis. Additionally, a report from The Sentencing Project provided details on the state felon voting laws and estimates of the population affected since there is now official source for this information.
+
+```{r Library and Data, message=FALSE, warning=FALSE}
 
 library(tidyverse)
-
-```
-
-## Electoral and temporal concerns contributing towards disenfranchisement
-
-Our main data source for this project comes from 2016 US Census.  We downloaded multiple files, each with various demographic information such as race, income, disability and employment. We merged these together along with results from the 2016 election to use as our main data file.
-
-Information on early voting, abseentee ballots and other mail-in ballots came from the National Council of State Legislatures. These were html tables that we entered into .csv files to use in our analysis.
-
-```{r Load Data, message=FALSE, warning=FALSE}
 
 census <- read.csv("Data/census_with_election_data.csv") %>% 
     mutate(turnout = (total_votes/X18.and.over.population)*100)
@@ -33,6 +37,10 @@ df <- left_join(census, laws, by=c('state.name'='State'))
 df <- df[complete.cases(df),]
 
 ```
+
+Since all of the demographic information was reported as percentages of a county population, we needed to create new category variables to better isolate the effects on the voting laws on different populations of interest. As such low, middle, and high income counties were defined and counties were designated as either containing high or low for the portion of residents with a disability.
+
+Additionally, we ranked the level of difficulty that laws governing early voting, mail-in ballots and voter identification presented to voters on a scale of 1 to 3, with 3 being the most restrictive. Using these scores we created an overall score on the ease of voting in each state on a scale of 3 to 9. States scoring a 3 or 4 were categorized as flexible while states scoring an 8 or 9 were considered restrictive.
 
 ```{r New Vars message=FALSE, warning=FALSE}
 
@@ -220,3 +228,4 @@ In the first visualization, the potential votes from that increase that would be
 # References
 Parlapiano, A., & Pearce, A. (2016, 09 13). For Every 10 U.S. Adults, Six Vote and Four Don’t. What Separates Them? From The New York Times: https://www.nytimes.com/interactive/2016/09/13/us/politics/what-separates-voters-and-nonvoters.html
 Uggen, C., Shannon, S., & Manza, J. (2010). State-Level Estimates of Felon Disenfranchisement in the United States, 2010. Washington, D.C.: The Sentencing Project.
+
