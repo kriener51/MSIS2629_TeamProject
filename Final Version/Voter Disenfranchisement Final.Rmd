@@ -17,9 +17,16 @@ The foundation of a representative democracy is the vote of its citizens. The go
 
 The U.S. Constitution grants the right to vote to all citizens over the age of 18. However, the process of conducting fair elections and verifying the eligibility of voters is left to the states. This process creates obstacles that discourage people from voting. These obstacles may be intentional, such as laws or regulations meant to exclude, or they could simply be unintended consequences based on practices or norms thought to be fair and impartial. Regardless, the result is voter suppression and it undermines the integrity and validity of our elections and government.
 
- While states reasonably need to determine where polling locations will be and when the polls will be open, these very practical limitations affect low-income voters differently as they may not be able to afford taking unpaid time from work in order to stand in line on election day. Voter identification laws disproportionately affect non-white and low-income voters in large parts of the US because they are less likely to have the most basic form of identification: a driver’s license. 
+While states reasonably need to determine where polling locations will be and when the polls will be open, these very practical limitations affect low-income voters differently as they may not be able to afford taking unpaid time from work in order to stand in line on election day. Voter identification laws disproportionately affect non-white and low-income voters in large parts of the US because they are less likely to have the most basic form of identification: a driver’s license. 
 
 In 2016, 6.1 million people of voting age were made ineligible to vote by felon voting laws. According to The Sentencing Project, in all but two US states incarcerated felons, those on parole or probation, or those post-incarceration cannot vote (Uggen, Shannon, & Manza, 2010). The process to re-apply for voting rights is tedious and opaque in some states. Since people of color are incarcerated at higher rates than whites, these laws also disproportionately prevent their participation as voters. 
+
+So what are some of the ways that states can make voting easier or more difficult? States with early voting allow voters to show up in person before election day to cast their ballots at pre-specified locations. This means a voter does not have to be concerned with any limitations or time constraints they may have for voting on election day itself. For example, if a person works on election day, but not the Saturday before, then early voting allows them to cast a vote without impacting their work schedule. 
+
+All states allow some form of mail-in ballot. In some states this is an absentee ballot, which a voter must apply to receive. Some states allow anyone to apply, others require a person submit a valid reason, such as being a college student outside their home district. Three states conduct all mail elections, in which all voters receive a ballot in the mail for every election. Regardless, mail-in ballots help remove the location based difficulties of voting since every home essentially becomes a polling location. This has an additional benefit of giving voters more time to thoughtfully consider all the candidates and initiatives that may be on the ballot.
+
+Finally, states may determine that when coming to a polling location a voter must show some form of identification to verify that they are in fact a registered voter for the jurisdiction. Many states did not, and still do not, require any form of identification to vote. The past several years however has seen a change in this trend with more states requiring identification or photo identification. Some states have taken this further to specify on certain valid types of identification and to severely limit the options for voters without approved identification.
+
 
 ## The Data
 
@@ -123,7 +130,7 @@ df2[, c(2:29)] <- sapply(df2[, c(2:29)], as.numeric.factor)
 
 ## County Distribution of Voter Turnout
 
-Counties with more flexible voting laws have, on average, a higher voter turnout. This implies that some people do not vote simply because they are not able to. There are multiple possible reasons for this such as not having time on a Tuesday to go vote or not having easy access to a polling location. Whether intentional or not, some states are excluding citizens from elections because the current laws and system make it too difficult to vote. We will take a deeper look into some of these possible explanations and see what factors are having the biggest impact.
+As these distributions show, overall turnout increases in states with more flexible, voter-friendly laws. It's clear that some counties have higher turnout than others and that different voting laws do not eliminate this variation. But it also makes clear that some people do not vote, not because they do not wish to, but because they are not able to. Whether intentional or not, some states are excluding citizens from elections because of the current laws and system that make it more difficult for voters. 
 
 ![Overall County Turnout](Data/CountyTurnout.png)
 
@@ -145,11 +152,13 @@ ggplot(df, aes(x=turnout, group=VoteCate)) +
           panel.grid.minor=element_blank(),
           panel.grid.major=element_blank())
 ```
+In displaying this information, we've consciously chosen density plots over scatterplots or smoothed lines. We expect there to be variation in turnout across counties and by showing this in the plot we address any criticism that may come from it. But our central point remains clear, because the distribution of the voter participation is shifted right when states are more flexible, and left when they are more inflexible. The center, unlabeled distribution is well representative of the overall distribution when the state groups are not separated. We've minimized the visual clutter so that viewers can clearly read what is shown.
 
+## Voter Turnout in Low-Income Counties
 
-## Voter turnout in low income counties
+We wanted to isolate Americans who were more likely to face structural difficulties in voting because of a lack of paid time off for voting and tight budgets, or complex commutes which would make it tricky to squeeze in a stop at the polls. We plotted the distributions for education, employment type, and even commute, but ultimately we felt that what we were really looking at was differences for low-income communities versus middle or high income. 
 
-For counties with the lowest median household income, we wanted to visualize how voting regulations affected their turnout. The graph below shows that counties in the bottom quartile for income will generally have higher rates of voter turnout the more flexible voting laws are. The encouraging takeaway is that it seems more flexible policies that remove barriers to voting have an effect on turnout, however this also means that currently some voices are being suppressed from strict voting laws.
+The familiar distributions below are the voting patterns for low income counties, those with a median income in the bottom quartile of our dataset. Likely for all the reasons suggested above, more flexible voting policies remove barriers for low income voters. This casts a different light on the common characterization of people with less education or low income as non-voters, with the subtle suggestion that it is because of less education or values that they don't vote. Instead it is more likely that the costs of the voting process are too high for low income Americans.
 
 ![Low Income County Turnout](Data/LowIncomeTurnout.png)
 
@@ -174,8 +183,9 @@ df %>% filter(IncomeLevels == "Low") %>% ggplot() +
 
 ```
 
-## Voter turnout in high income counties
-Contrary to low income counties, the high income counties do not see much change in voter turnout. No matter how strict the voting laws are, the average turnout remains the same for high income voters. This suggests that wealthy citizens have an easier time voting and an advantage in getting their voices heard. It is encouraging to see such a high proportion of voters exercising their right, but these graphs highlight a gap between low and high income counties that needs to be addressed.
+## Voter Turnout in High-Income Counties
+
+Contrary to low-income counties, high-income counties, those in the top quartile for median income, do not see much change in voter turnout. No matter how strict the voting laws are, the distribution of turnout remains similar for high-income voters. This reinforces the interpretation of the previous graph, since higher income citizens would have more flexibility from their work to go to the polls or would otherwise not need to consider the costs of voting. While it is encouraging to see such a high participation rates, the lack of representation form low-income voters becomes more stark. Low-income communities already face disadvantages in having their voices heard since they do not have the means to donate or lobby politicians. For this disadvantage to extend to the actual polling place is all the more troubling.
 
 ![High Income County Turnout](Data/HighIncomeTurnout.png)
 
@@ -198,10 +208,14 @@ df %>% filter(IncomeLevels == "High") %>% ggplot() +
 
 ```
 
+## A note about race and ethnicity
+
+Our data only allowed us to identify racial or ethnic make-up at a county level. This prevented us from really being able to isolate the impacts of the voting laws on African-Americans or Latinos who have faced historic disenfranchisement.
+
+
 ## Voter turnout and Americans with disabilities
 
-From this graph we see the distribution of the turnout rates and the percentage of people with disability. Polling place inaccessibility may contribute to the lower voter turnout, both directly by making voting more difficult for people with disabilities, and indirectly by sending the message that people with disabilities are not expected to participate in the political sphere. We explore the role of polling place inaccessibility by examining voter turnout and reports of voting
-difficulties among people with disabilities in US elections. We have tried to show it for all voters group, any voters and Excused only Group.
+For these graphs we have limited the data to those counties in which at least 20% of the population has a disability. Polling place inaccessibility may contribute to the lower voter turnout, both directly by making voting more difficult for people with disabilities, and indirectly by sending the message that people with disabilities are not expected to participate in the political sphere. Though disabilities are not limited to mobility, we did see that the strongest voting law impact comes when states implement all mail voting. A disability would provide a clear reason for requesting a ballot, so it is not surprising to see little difference among absentee ballot states. But the application process may be difficult for some, so by sending the ballot to voters with a disability, the state has created a more inclusive process.
 
 ![Americans with Disbilities](Data/AwDisabilities.png)
 
@@ -228,7 +242,7 @@ df %>% filter(AwD == "High") %>% ggplot() +
 ## What if turnout increased...
 
 ### Narrative Improvement
-In thinking about our overall narrative that voter disenfranchisement is an issue that negatively impacts America by affecting the electoral mandate, we wanted to show a sceneraio of what might happen if more voters had turned out for the 2016 presidential election. We then perform a deeper dive into analyzing how that can happen by looking at empowering certain slices of the voting-age population. In this case, we demonstrate how restoring voting rights to felons could increase overall turnout and affect the election results. In this particular year, a large increase in the overall turnout leads to the vote margin in the state of Florida and Michigan changing from being in Donald Trump's favor to Hillary Clinton. We find that re-enfrachisement of felons could similarly lead to Florida and Michigan flipping to Clinton. In both cases, the electoral votes from those two states hand over the election to Clinton, a Democrat. This is just one way of measuring the impact of increased voter turnout on the results and that impact could be different if some other demographic groups was analyzed. Hopefully in future years increasing the voter turnout could become a bipartisan effort because the ideal of American democracy is to give everyone the opportunity to vote and make their voice heard. Voter turnout defines elections and if the U.S. wants to truly be a representative democracy, we should be striving to have as many people show up to vote as possible.
+In thinking about our overall narrative that voter disenfranchisement is an issue that negatively impacts America by affecting the electoral mandate, we wanted to show a scenario of what might happen if more voters had turned out for the 2016 presidential election. We then perform a deeper dive into analyzing how that can happen by looking at empowering certain slices of the voting-age population. In this case, we demonstrate how restoring voting rights to felons could increase overall turnout and affect the election results. In this particular year, a large increase in the overall turnout leads to the vote margin in the state of Florida and Michigan changing from being in Donald Trump's favor to Hillary Clinton. We find that re-enfranchisement of felons could similarly lead to Florida and Michigan flipping to Clinton. In both cases, the electoral votes from those two states hand over the election to Clinton, a Democrat. This is just one way of measuring the impact of increased voter turnout on the results and that impact could be different if some other demographic groups was analyzed. Hopefully in future years increasing the voter turnout could become a bipartisan effort because the ideal of American democracy is to give everyone the opportunity to vote and make their voice heard. Voter turnout defines elections and if the U.S. wants to truly be a representative democracy, we should be striving to have as many people show up to vote as possible.
 
 
 ### 1. Across all demographics (measured at county-level)
