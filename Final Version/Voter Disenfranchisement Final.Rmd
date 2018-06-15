@@ -277,9 +277,9 @@ In the first visualization, the potential votes from that increase that would be
 
 ## References
 
-National Conference of State Legislatures
+National Conference of State Legislatures  
 Parlapiano, A., & Pearce, A. (Sep 2016). _For Every 10 U.S. Adults, Six Vote and Four Don’t. What Separates Them?_ From [The New York Times](https://www.nytimes.com/interactive/2016/09/13/us/politics/what-separates-voters-and-nonvoters.html).  
 Uggen, C., Manza, J. (Dec 2002). Democratic Contraction? _Political Consequences of Felon Disenfranchisement in the United States._ American Sociological Review, Vol. 67, No. 6, pp. 777-803. From [New York University](https://as.nyu.edu/content/dam/nyu-as/faculty/documents/Democratic_Contraction.pdf).  
-Uggen, C., Shannon, S., & Manza, J. (2010). _State-Level Estimates of Felon Disenfranchisement in the United States, 2010._ Washington, D.C.: The Sentencing Project.
+Uggen, C., Shannon, S., & Manza, J. (2010). _State-Level Estimates of Felon Disenfranchisement in the United States, 2010._ Washington, D.C.: The Sentencing Project.  
 U.S. Census Bureau
 
